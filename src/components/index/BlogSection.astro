@@ -12,14 +12,14 @@ const latestPosts: Post[] = [
     highText: 'Programación orientada a objetos.',
     lowText: 'Todos los conceptos a profundidad del paradigma orientado a objetos.',
     iconClass: 'bi bi-journal-richtext',
-    href: '#',
+    href: '/blog',
     aosDelay: 0,
   },
   {
     highText: 'La princesa del laberinto',
     lowText: '¿Qué harías si durante toda tu vida sólo has conocido el interior de un oscuro laberinto?',
     iconClass: 'bi bi-journal-richtext',
-    href: '#',
+    href: '/blog',
     aosDelay: 100,
   },
 ];
@@ -47,7 +47,7 @@ const latestPosts: Post[] = [
           class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch post-card"
           data-aos="fade-up"
           data-aos-delay={post.aosDelay}>
-          <a href={post.href} target="_blank">
+          <a href={post.href}>
             <div class="count-box">
               <i class={post.iconClass}></i>
               <p><b>{post.highText}</b> {post.lowText}</p>
