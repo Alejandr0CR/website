@@ -1,0 +1,51 @@
+---
+import LinkCard from "./LinkCard.astro";
+---
+
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>Blog</h2>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12 mb-3">
+        <h3>Tecnología</h3>
+      </div>
+
+      <LinkCard
+        aosDelay={0}
+        href="#"
+        iconClass="bi bi-stopwatch"
+        title="Programación orientada a objetos">
+        Próximamente
+      </LinkCard>
+    </div>
+    <!-- row -->
+
+    <div class="row mb-5">
+      <div class="col-12 mb-3">
+        <h3>Historias</h3>
+      </div>
+
+      <LinkCard
+        aosDelay={0}
+        href="#"
+        iconClass="bi bi-stopwatch"
+        title="La princesa del laberinto">
+        Próximamente
+      </LinkCard>
+
+    </div>
+    <!-- row -->
+  </div>
+</section>
+
+<style>
+  section {
+    padding-top: 20px;
+  }
+  h3 {
+    color: darkblue;
+  }
+</style>

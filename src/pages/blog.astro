@@ -5,6 +5,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
+import LinksGrid from '../components/blog/LinksGrid.astro';
+
 
 const stylesheets = [
 	'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i',
@@ -52,19 +54,15 @@ const title = '';
   <main id="main">
 
     <Breadcrumbs
-			current="Inner Page"
 			links={[
-				{ href: '/', text: 'Home' },
+				{ href: '/', text: 'Inicio' },
 			]}
+			current="blog"
 		></Breadcrumbs>
 
-    <section class="inner-page">
-      <div class="container">
-        <p>
-          Example inner page template
-        </p>
-      </div>
-    </section>
+		<div class="container">
+			<LinksGrid></LinksGrid>
+		</div>
 
   </main><!-- End #main -->
 
