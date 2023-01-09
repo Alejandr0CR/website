@@ -4,9 +4,11 @@ export interface Props {
 	description: string;
 	author: string;
 	keywords: string;
+	stylesheets: string[];
+	scripts: string[];
 }
 
-const { title, description, author, keywords } = Astro.props;
+const { title, description, author, keywords, stylesheets, scripts } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -25,41 +27,12 @@ const { title, description, author, keywords } = Astro.props;
 		<!-- FAVICONS -->
 		<link href={'assets/img/favicon.png'} rel="icon" />
 		<link href={'assets/img/apple-touch-icon.png'} rel="apple-touch-icon" />
-
-		<!-- GOOGLE FONTS -->
-		<link
-			href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-			rel="stylesheet"
-		/>
-
-		<!-- VENDOR CSS FILES -->
-		<link
-			href={'assets/vendor/aos/aos.css'}
-			rel="stylesheet"
-		/>
-		<link
-			href={'assets/vendor/bootstrap/css/bootstrap.min.css'}
-			rel="stylesheet"
-		/>
-		<link
-			href={'assets/vendor/bootstrap-icons/bootstrap-icons.css'}
-			rel="stylesheet"
-		/>
-		<link
-			href={'assets/vendor/boxicons/css/boxicons.min.css'}
-			rel="stylesheet"
-		/>
-		<link
-			href={'assets/vendor/glightbox/css/glightbox.min.css'}
-			rel="stylesheet"
-		/>
-		<link
-			href={'assets/vendor/swiper/swiper-bundle.min.css'}
-			rel="stylesheet"
-		/>
-
-		<!-- TEMPLATE MAIN CSS FILE -->
-		<link href={'assets/css/style.css'} rel="stylesheet" />
+		<!-- STYLESHEETS -->
+		{
+			stylesheets.map((stylesheet) => (
+				<link href={stylesheet} rel="stylesheet" />
+			))
+		}
 
 		<!-- =======================================================
 		* Template Name: iPortfolio - v3.9.1
@@ -71,6 +44,12 @@ const { title, description, author, keywords } = Astro.props;
 
 	<body>
 		<slot />
+
+		{
+			scripts.map((script) => (
+				<script src={script} />
+			))
+		}
 	</body>
 </html>
 
