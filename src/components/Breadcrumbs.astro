@@ -1,0 +1,25 @@
+---
+export interface Props {
+  current: string;
+  links: Array<{ text: string; href: string }>;
+}
+
+const { current, links } = Astro.props;
+---
+
+<section class="breadcrumbs">
+  <div class="container">
+
+    <div class="d-flex justify-content-end align-items-center">
+      <ol>
+        {
+          links.map((link) => (
+            <li><a href={link.href}>{link.text}</a></li>
+          ))
+        }
+        <li>{current}</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
