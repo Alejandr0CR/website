@@ -31,8 +31,8 @@ const { title, description, author, keywords, stylesheets, scripts } = Astro.pro
 		<!-- TITLE -->
 		<title>{title}</title>
 		<!-- FAVICONS -->
-		<link href={'assets/img/favicon.png'} rel="icon" />
-		<link href={'assets/img/apple-touch-icon.png'} rel="apple-touch-icon" />
+		<link href={'/assets/img/favicon.png'} rel="icon" />
+		<link href={'/assets/img/apple-touch-icon.png'} rel="apple-touch-icon" />
 		<!-- STYLESHEETS -->
 		{stylesheets.map((stylesheet) => (
 			<link href={stylesheet} rel="stylesheet" />
