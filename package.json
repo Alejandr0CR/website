@@ -1,0 +1,9 @@
+{
+  "name": "alejandrocr.co",
+  "version": "0.0.1",
+  "description": "Alejandro CR website",
+  "main": "main.js",
+  "scripts": {},
+  "keywords": ["website", "alejandrocr"],
+  "author": "virtualitems"
+}
