@@ -2,8 +2,19 @@
   "name": "alejandrocr.co",
   "version": "0.0.1",
   "description": "Alejandro CR website",
-  "main": "main.js",
-  "scripts": {},
   "keywords": ["website", "alejandrocr"],
-  "author": "virtualitems"
+  "author": "virtualitems",
+  "main": "main.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "astro": "^4.1.2",
+    "typescript": "^5.3.3"
+  }
 }
