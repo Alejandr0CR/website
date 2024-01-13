@@ -1,0 +1,47 @@
+---
+interface Props {
+	theme: string;
+	active: string;
+}
+
+const { active, theme } = Astro.props;
+
+let navBg, navText;
+
+if (theme === 'dark') {
+  navBg = 'black';
+  navText = 'light';
+} else {
+  navBg = 'white';
+  navText = 'dark';
+}
+
+const navClassName = `bg-${theme}`;
+
+---
+<nav class={`navbar navbar-expand-lg navbar-${theme} bg-${navBg} text-${navText} mb-3`}>
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
+        <li class="nav-item me-5">
+          <a class="nav-link active" href="#">Inicio</a>
+        </li>
+        <li class="nav-item me-5">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Perfil</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav-link.active {
+    border-bottom: 2px solid white;
+  }
+</style>

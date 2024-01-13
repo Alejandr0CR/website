@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import NavBarTop from '../components/NavBarTop.astro';
 
 // - Page
 //     - SEO Wrapper
@@ -17,26 +18,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout theme="dark" title="example">
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-black text-light mb-3">
-		<div class="container-fluid">
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarScroll">
-				<ul class="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
-					<li class="nav-item me-5">
-						<a class="nav-link active" href="#">Inicio</a>
-					</li>
-					<li class="nav-item me-5">
-						<a class="nav-link" href="#">Blog</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Perfil</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<NavBarTop theme="dark" />
 
 	<header class="container px-3 px-md-5">
 
@@ -127,32 +109,15 @@ import Layout from '../layouts/Layout.astro';
 	</footer>
 
 	<Fragment slot="styles">
-
 		<style>
 		body {
 			background-image: url('https://picsum.photos/1600/1000');
-		}
-
-		li {
-			list-style: none;
-		}
-
-		a,
-		a:visited,
-		a:hover,
-		a:active {
-			color: unset;
-			text-decoration: none;
 		}
 
 		.card:hover {
 			transform: scale(1.05);
 			box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
 			transition: transform 0.3s ease-in-out;
-		}
-
-		.nav-link.active {
-			border-bottom: 2px solid white;
 		}
 	</style>
 	</Fragment>
