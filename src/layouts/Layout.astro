@@ -1,0 +1,32 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+---
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+    <!-- meta -->
+		<meta charset="UTF-8" />
+		<meta name="description" content="AlejandroCR website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- links -->
+		<link rel="icon" type="image/png" href="/images/favicon.png" />
+		<link rel="stylesheet" href="/bootstrap5/bootstrap.min.css" />
+		<slot name="styles" />
+
+    <!-- title -->
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+		<script is:inline src="/popper/popper.min.js"></script>
+		<script is:inline src="/bootstrap5/bootstrap.min.js"></script>
+		<slot name="scripts" />
+	</body>
+</html>
