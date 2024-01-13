@@ -1,0 +1,11 @@
+a,
+a:visited,
+a:hover,
+a:active {
+  color: unset;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
