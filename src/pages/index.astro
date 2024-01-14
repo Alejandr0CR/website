@@ -1,20 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import NavBarTop from '../components/NavBarTop.astro';
+import Footer from '../components/Footer.astro';
 import LatestPostGrid from '../components/LatestPostGrid.astro';
-
-// - Page
-//     - SEO Wrapper
-//     - Layout (contenedor)
-//     - Header (contenido)
-//         - navbar (contenido)
-//         - Portada (contenido)
-//         - Descripción y enlaces a redes sociales (contenido)
-//         - Proyecto y empresa actual (contenido)
-//     - Main (contenido)
-//         - Tarjetas de últimos artículos (contenido)
-//     - Footer (contenido)
-//         - Texto legal (contenido)
+import NavBarTop from '../components/NavBarTop.astro';
 
 ---
 <Layout theme="dark" title="Inicio | Alejandro Carrasco Rodríguez">
@@ -25,7 +13,7 @@ import LatestPostGrid from '../components/LatestPostGrid.astro';
 
 		<section class="no-selectable bg-black text-light rounded-4 mb-5">
 			<div class="py-5">
-				<h1 class="d-block text-center animate-charcter">Alejandro Carrasco Rodríguez</h1>
+				<h1 class="d-block text-center animate-name">Alejandro Carrasco Rodríguez</h1>
 				<span class="d-block text-center h4">Ingeniero de la web</span>
 			</div>
 		</section>
@@ -36,26 +24,12 @@ import LatestPostGrid from '../components/LatestPostGrid.astro';
 		<LatestPostGrid src="https://www.alejandrocr.co/data/posts.json" />
 	</main>
 
-	<footer class="container bg-black text-light py-3 rounded-top-3">
-		<nav>
-			<div class="text-center mb-3">
-				<a class="d-block d-md-inline me-md-4 py-2" href="https://github.com/virtualitems" target="_blank">
-					Github <i class="fab fa-github"></i>
-				</a>
-				<a class="d-block d-md-inline me-md-4 py-2" href="https://www.linkedin.com/in/alejandro-carrasco-rodr%C3%ADguez-a06a37175/" target="_blank">
-					Linkedin <i class="fab fa-linkedin"></i>
-				</a>
-			</div>
-		</nav>
-		<div class="py-2">
-			<p class="text-center m-0">© 2024 Alejandro Carrasco Rodríguez</p>
-		</div>
-	</footer>
+	<Footer />
 
 </Layout>
 
 <style>
-.animate-charcter {
+.animate-name {
   background-image: linear-gradient(
 		-225deg,
 		#C5FFF8 0%,
