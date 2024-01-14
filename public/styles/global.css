@@ -1,3 +1,15 @@
+html {
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+body {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
 body {
   background-image: url('https://picsum.photos/1600/1000');
   background-repeat: no-repeat;

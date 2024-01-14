@@ -2,11 +2,41 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import NavBarTop from '../components/NavBarTop.astro';
+import PostWideCard from '../components/PostWideCard.astro';
 
 ---
 <Layout theme="dark" title="Blog | Alejandro Carrasco Rodríguez">
   <NavBarTop theme="dark" active="blog" />
-  <h1>Blog</h1>
+
+  <header class="container mb-5">
+    <section class="no-selectable bg-black text-light rounded-4">
+			<div class="py-3">
+				<h1 class="h4 d-block text-center animate-name">Blog</h1>
+			</div>
+		</section>
+  </header>
+
+  <main class="container">
+
+    <div class="row w-100" style="padding-bottom: 10em">
+      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+        <PostWideCard />
+      </div>
+      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+        <PostWideCard />
+      </div>
+      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+        <PostWideCard />
+      </div>
+      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+        <PostWideCard />
+      </div>
+      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+        <PostWideCard />
+      </div>
+
+    </div>
+  </main>
 
   <Footer />
 </Layout>
