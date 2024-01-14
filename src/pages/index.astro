@@ -23,10 +23,10 @@ import LatestPostGrid from '../components/LatestPostGrid.astro';
 
 	<header class="container px-3 px-md-5">
 
-		<section class="bg-black text-light rounded-4 mb-5">
+		<section class="bg-black text-light rounded-4 mb-5 border-black">
 			<div class="d-flex flex-column align-items-center py-5">
-				<h1>Alejandro Carrasco Rodríguez</h1>
-				<span class="d-block h4">Desarrollador web</span>
+				<h1 class="animate-charcter">Alejandro Carrasco Rodríguez</h1>
+				<span class="d-block h4">Ingeniero de la web</span>
 			</div>
 		</section>
 
@@ -40,3 +40,34 @@ import LatestPostGrid from '../components/LatestPostGrid.astro';
 	</footer>
 
 </Layout>
+
+<style>
+.border-black {
+	border: 3px solid #000;
+}
+
+.animate-charcter {
+  background-image: linear-gradient(
+		-225deg,
+		#C5FFF8 0%,
+		#96EFFF 29%,
+		#5FBDFF 67%,
+		#7B66FF 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+</style>
