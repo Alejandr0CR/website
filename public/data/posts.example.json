@@ -1,0 +1,23 @@
+{
+    "slug": "",
+    "image": "",
+    "title": "",
+    "summary": "",
+    "size": "small | medium | large",
+    "direction": "vertical | horizontal",
+    "promoted": true,
+    "tags": ["", ""],
+    "body": [
+        {
+            "type": "paragraph",
+            "text": ""
+        },
+        {
+            "type": "image",
+            "url": "https://",
+            "alt": "",
+            "width": 0,
+            "height": 0
+        }
+    ]
+}
