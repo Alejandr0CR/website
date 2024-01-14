@@ -42,7 +42,33 @@ function isValuable(value) {
 
 // Model
 class Post {
-  constructor({slug, image, title, summary, size, direction}={}) {
+  slug;
+  image;
+  title;
+  summary;
+  size;
+  direction;
+  tags;
+  body;
+
+  /**
+   * @param {Object} initials
+   * @param {string} initials.slug
+   * @param {string} initials.image
+   * @param {string} initials.title
+   * @param {string} initials.summary
+   * @param {string} initials.size
+   * @param {string} initials.direction
+   * @param {Array} initials.tags
+   * @param {Array} initials.body
+   */
+  constructor(initials=null) {
+
+    if (!(initials instanceof Object)) {
+      throw new Error('initials is not an object');
+    }
+
+    const { slug, image, title, summary, size, direction } = initials;
 
     if (!isValuable(slug)) {
       throw new Error('slug is not valuable');
@@ -151,11 +177,13 @@ window.addEventListener('DOMContentLoaded', function(e) {
     }))
 
     // on data
-    .then(data => {
-      const html = data.map((post) => {
-        const col = 6;
-        return createPostCard(post, col);
-      }).join('');
+    .then((modelsList) => {
+
+      if (!Array.isArray(modelsList)) {
+        throw new Error('modelsList is not an array');
+      }
+
+      const html = modelsList.map(createPostCard).join('');
 
       latestPostGridSection.innerHTML = html;
     })
