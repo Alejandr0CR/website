@@ -33,21 +33,10 @@ import LatestPostGrid from '../components/LatestPostGrid.astro';
 	</header>
 
 	<main class="container">
-		<LatestPostGrid src="http://www.alejandrocr.co/data/posts.json" />
+		<LatestPostGrid src="http://localhost:4321/data/posts.json" />
 	</main>
 
 	<footer class="container">
 	</footer>
-
-	<Fragment slot="styles">
-		<style>
-		body {
-			background-image: url('https://picsum.photos/1600/1000');
-		}
-	</style>
-	</Fragment>
-
-	<Fragment slot="scripts">
-	</Fragment>
 
 </Layout>
