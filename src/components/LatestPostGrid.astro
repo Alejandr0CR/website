@@ -9,14 +9,14 @@ const { src } = Astro.props;
 <section id="latest-post-grid" class="row text-light mb-5 px-5 g-5" data-src={src}>
 </section>
 
-<style>
+<style is:global>
+.card {
+  border: unset;
+}
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
   transition: transform 0.3s ease-in-out;
-}
-.card {
-  border: 10px solid black;
 }
 </style>
 
