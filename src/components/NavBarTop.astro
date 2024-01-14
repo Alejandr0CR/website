@@ -16,8 +16,6 @@ if (theme === 'dark') {
   navText = 'dark';
 }
 
-const navClassName = `bg-${theme}`;
-
 ---
 <nav class={`navbar navbar-expand-lg navbar-${theme} bg-${navBg} text-${navText} mb-3`}>
   <div class="container-fluid">
@@ -27,13 +25,13 @@ const navClassName = `bg-${theme}`;
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
         <li class="nav-item me-5">
-          <a class={`nav-link ${active === 'index' ? 'active' : ''}`} href="#">Inicio</a>
+          <a class={`nav-link ${active === 'index' ? 'active' : ''}`} href="/">Inicio</a>
         </li>
         <li class="nav-item me-5">
-          <a class={`nav-link ${active === 'blog' ? 'active' : ''}`} href="#">Blog</a>
+          <a class={`nav-link ${active === 'blog' ? 'active' : ''}`} href="/blog">Blog</a>
         </li>
         <li class="nav-item">
-          <a class={`nav-link ${active === 'profile' ? 'active' : ''}`} href="#">Perfil</a>
+          <a class={`nav-link ${active === 'about' ? 'active' : ''}`} href="/about">Perfil</a>
         </li>
       </ul>
     </div>
