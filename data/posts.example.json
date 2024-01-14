@@ -5,6 +5,8 @@
     "summary": "",
     "size": "small | medium | large",
     "direction": "vertical | horizontal",
+    "created_at": "2134-12-31T00:00:00.000Z",
+    "updated_at": "2134-12-31T00:00:00.000Z",
     "promoted": true,
     "tags": ["", ""],
     "body": [
