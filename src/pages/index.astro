@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import NavBarTop from '../components/NavBarTop.astro';
+import LatestPostGrid from '../components/LatestPostGrid.astro';
 
 // - Page
 //     - SEO Wrapper
@@ -16,7 +17,7 @@ import NavBarTop from '../components/NavBarTop.astro';
 //         - Texto legal (contenido)
 
 ---
-<Layout theme="dark" title="example">
+<Layout theme="dark" title="Inicio | Alejandro Carrasco Rodríguez">
 
 	<NavBarTop theme="dark" />
 
@@ -29,76 +30,7 @@ import NavBarTop from '../components/NavBarTop.astro';
 			</div>
 		</section>
 
-		<section class="text-light mb-5 px-5">
-			<div class="row text-light g-5">
-				<div class="col-12 col-md-4 d-flex justify-content-center">
-					<a href="#">
-						<div class="card w-100">
-							<img src="https://picsum.photos/300" height="250px" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-12 col-md-4 d-flex justify-content-center">
-					<a href="#">
-						<div class="card w-100">
-							<img src="https://picsum.photos/300" height="250px" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-12 col-md-4 d-flex justify-content-center">
-					<a href="#">
-						<div class="card w-100">
-							<img src="https://picsum.photos/300" height="250px" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-12 col-md-6 d-flex justify-content-center">
-					<a href="#">
-						<div class="card w-100 flex-row">
-							<img src="https://picsum.photos/300" height="250px" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-12 col-md-6 d-flex justify-content-center">
-					<a href="#">
-						<div class="card w-100 flex-row">
-							<img src="https://picsum.photos/300" height="250px" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-12 col-md-12 d-flex justify-content-center">
-					<a href="#">
-						<div class="card w-100 flex-row">
-							<img src="https://picsum.photos/300" height="250px" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-		</section>
+		<LatestPostGrid src="http://www.alejandrocr.co/data/posts.json" />
 
 	</header>
 
@@ -112,12 +44,6 @@ import NavBarTop from '../components/NavBarTop.astro';
 		<style>
 		body {
 			background-image: url('https://picsum.photos/1600/1000');
-		}
-
-		.card:hover {
-			transform: scale(1.05);
-			box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
-			transition: transform 0.3s ease-in-out;
 		}
 	</style>
 	</Fragment>

@@ -1,0 +1,169 @@
+---
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+
+---
+<section id="latest-post-grid" class="row text-light mb-5 px-5 g-5" data-src={src}>
+</section>
+
+<style>
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+.card {
+  border: 10px solid black;
+}
+</style>
+
+<script>
+
+// Utils
+function isValuable(value) {
+
+  if (value === undefined) {
+    return false;
+  }
+
+  if (value === null) {
+    return false;
+  }
+
+  if(Object.is(value, NaN)) {
+    return false;
+  }
+
+  return true;
+};
+
+// Model
+class Post {
+  constructor({slug, image, title, summary, size, direction}={}) {
+
+    if (!isValuable(slug)) {
+      throw new Error('slug is not valuable');
+    }
+
+    if (!isValuable(image)) {
+      throw new Error('image is not valuable');
+    }
+
+    if (!isValuable(title)) {
+      throw new Error('title is not valuable');
+    }
+
+    if (!isValuable(summary)) {
+      throw new Error('summary is not valuable');
+    }
+
+    if (!isValuable(size)) {
+      throw new Error('size is not valuable');
+    }
+
+    if (!isValuable(direction)) {
+      throw new Error('direction is not valuable');
+    }
+
+    this.slug = slug;
+    this.image = image;
+    this.title = title;
+    this.summary = summary;
+    this.size = size;
+    this.direction = direction;
+    this.tags = [];
+    this.body = [];
+  }
+}
+
+// Elements
+const latestPostGridSection = document.getElementById('latest-post-grid');
+
+// Functions
+function createPostCard(post) {
+
+  if (!(post instanceof Post)) {
+    throw new Error('post model is not an instance of Post');
+  }
+
+  const size = (
+    post.size === 'small' ? '4' :
+    post.size === 'medium' ? '6' :
+    post.size === 'large' ? '12' :
+    '12'
+  )
+
+  const direction = (
+    post.direction === 'horizontal' ? 'row' :
+    post.direction === 'vertical' ? 'column' :
+    'column'
+  )
+
+  const html = `
+    <div class="col-12 col-md-${size} d-flex justify-content-center">
+      <a class="w-100 ${ post.size === 'small' ? 'w-md-100' : 'w-md-75' }" href="/blog/${post.slug}">
+        <div class="card w-100 flex-md-${direction}">
+          <img src="${post.image}" height="250px" class="card-img-top" alt="${post.title}">
+          <div class="card-body ${post.direction === 'horizontal' ? 'w-100' : ''}">
+            <h5 class="card-title">${post.title}</h5>
+            <p class="card-text">${post.summary}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  `;
+
+  return html;
+}
+
+// On load
+window.addEventListener('DOMContentLoaded', function(e) {
+  const fetchTarget = latestPostGridSection.dataset.src;
+
+  const fetchOptions = {method: 'GET', headers: {'Content-Type': 'application/json'}};
+
+  console.log('start loading');
+
+  fetch(fetchTarget, fetchOptions)
+    .then(response => new Promise((resolve, reject) => {
+
+      response
+        .json()
+        .then(data => {
+          if (response.ok) return data;
+          console.warn(data); // 4xx 5xx
+          throw new Error(`${response.status} ${response.statusText}`);
+        })
+
+        .then(rawData => {
+          return rawData.filter((raw) => raw.promoted && raw.promoted === true);
+        })
+
+        .then(rawData => {
+          resolve(rawData.map((raw) => new Post(raw)))
+        })
+
+        .catch(error => reject(error));
+
+    }))
+
+    // on data
+    .then(data => {
+      const html = data.map((post) => {
+        const col = 6;
+        return createPostCard(post, col);
+      }).join('');
+
+      latestPostGridSection.innerHTML = html;
+    })
+
+    // on error
+    .catch(error => console.error(error))
+
+    // stop loading
+    .finally(() => console.log('stop loading'));
+});
+</script>
