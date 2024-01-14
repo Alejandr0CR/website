@@ -19,19 +19,19 @@ import PostWideCard from '../components/PostWideCard.astro';
   <main class="container">
 
     <div class="row w-100" style="padding-bottom: 10em">
-      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+      <div class="card-container col-12 mb-3 justify-content-center">
         <PostWideCard />
       </div>
-      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+      <div class="card-container col-12 mb-3 justify-content-center">
         <PostWideCard />
       </div>
-      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+      <div class="card-container col-12 mb-3 justify-content-center">
         <PostWideCard />
       </div>
-      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+      <div class="card-container col-12 mb-3 justify-content-center">
         <PostWideCard />
       </div>
-      <div style="height: 10em" class="col-12 mb-3 justify-content-center">
+      <div class="card-container col-12 mb-3 justify-content-center">
         <PostWideCard />
       </div>
 
@@ -40,3 +40,9 @@ import PostWideCard from '../components/PostWideCard.astro';
 
   <Footer />
 </Layout>
+
+<style>
+.card-container {
+  height: 10rem;
+}
+</style>
