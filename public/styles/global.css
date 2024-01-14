@@ -1,5 +1,7 @@
 body {
   background-image: url('https://picsum.photos/1600/1000');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a,
