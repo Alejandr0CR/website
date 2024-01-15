@@ -23,7 +23,12 @@ const { src } = Astro.props;
 <script>
 
 // Utils
-function isValuable(value) {
+
+/**
+ * @param {any} value
+ * @returns {Boolean}
+ */
+function isValuable(value=null) {
 
   if (value === undefined) {
     return false;
@@ -52,7 +57,7 @@ class Post {
   body = null;
 
   /**
-   * @param {Object} initials
+   * @param {Object | null} initials
    * @param {string} initials.slug
    * @param {string} initials.image
    * @param {string} initials.title
@@ -62,7 +67,7 @@ class Post {
    * @param {Array} initials.tags
    * @param {Array} initials.body
    */
-  constructor(initials=null) {
+  constructor(initials) {
 
     if (!(initials instanceof Object)) {
       throw new Error('initials is not an object');
@@ -185,7 +190,10 @@ window.addEventListener('DOMContentLoaded', function(e) {
 
       const html = modelsList.map(createPostCard).join('');
 
-      latestPostGridSection.innerHTML = html;
+      if (latestPostGridSection) {
+        latestPostGridSection.innerHTML = html;
+      }
+
     })
 
     // on error
