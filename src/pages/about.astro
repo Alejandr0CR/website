@@ -1,130 +1,308 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
-import NavBarTop from '../components/NavBarTop.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import NavBarTop from "../components/NavBarTop.astro";
 ---
+
 <Layout theme="dark" title="Acerca de mí | Alejandro Carrasco Rodríguez">
   <NavBarTop theme="dark" active="about" />
 
   <header class="container mb-5">
     <section class="no-selectable bg-black text-light rounded-4">
-			<div class="py-3">
-				<h1 class="h4 d-block text-center">Acerca de mí</h1>
-			</div>
-		</section>
+      <div class="py-3">
+        <h1 class="h4 d-block text-center">Acerca de mí</h1>
+      </div>
+    </section>
   </header>
 
   <main class="container mb-5">
-
     <section class="no-selectable bg-light text-dark rounded-4 mb-5">
-			<div class="px-3 py-3 px-md-5 py-md-5">
+      <div class="px-3 py-3 px-md-5 py-md-5">
         <div class="row">
           <div class="col-md-5 mb-4 mb-md-0 text-center">
-            <img src="https://picsum.photos/800" alt="Alejandro Carrasco Rodríguez" class="img-fluid rounded-4" style="max-height: 22rem;" />
+            <img
+              src="https://picsum.photos/800"
+              alt="Alejandro Carrasco Rodríguez"
+              class="img-fluid rounded-4"
+              style="max-height: 22rem;"
+            />
           </div>
           <div class="col-md-7">
-            <h2 class="text-primary mb-4 text-center text-md-start">¡Bienvenidos a la era digital!</h2>
+            <h2 class="text-primary mb-4 text-center text-md-start">
+              ¡Bienvenidos a la era digital!
+            </h2>
             <p class="d-block">
-              En nuestro mundo hiperconectado,
-              los protagonistas son quienes entienden cómo funciona la tecnología de la que tanto dependen.
+              En nuestro mundo hiperconectado, los protagonistas son quienes
+              entienden cómo funciona la tecnología de la que tanto dependen.
               <b>Mi nombre es Alejandro y soy Ingeniero en Sistemas.</b>
               Me gusta crear soluciones a problemas complejos y técnicamente desafiantes,
               por lo que siempre estoy dispuesto a aprender y enfrentar nuevos retos.
-              <b>Tengo como propósito contribuír de manera significativa a la sociedad, a través de la tecnología,
-              para mejorar la calidad de vida de las personas.</b>
+              <b
+                >Tengo como propósito contribuír de manera significativa a la
+                sociedad, a través de la tecnología, para mejorar la calidad de
+                vida de las personas.</b
+              >
             </p>
             <p class="d-block">
-              <b>Me apasiona la tecnología y las historias</b>,
-              por lo que encontrarás mucho más que contenido técnico en mi sitio.
+              <b>Me apasiona la tecnología y las historias</b>, por lo que
+              encontrarás mucho más que contenido técnico en mi sitio.
             </p>
           </div>
         </div>
-			</div>
-		</section>
+      </div>
+    </section>
 
     <section class="no-selectable bg-light text-dark rounded-4 mb-5 p-5">
-
-			<div class="mb-5">
-        <h2 class="text-primary text-center text-md-start mb-3">Analista y Desarrollador de Software</h2>
+      <div class="mb-5">
+        <h2 class="text-primary text-center text-md-start mb-3">
+          Analista y Desarrollador de Software
+        </h2>
         <p class="d-block mb-3">
-          <b>Mi objetivo</b> es ser <b>Arquitecto de Soluciones</b>, por lo que estoy enfocado en dominar
-          <b>las mejores prácticas en análisis, desarrollo y despliegue</b> de sistemas informáticos.
+          <b>Mi objetivo</b> es ser <b>Arquitecto de Soluciones</b>, por lo que
+          estoy enfocado en dominar
+          <b>las mejores prácticas en análisis, desarrollo y despliegue</b> de sistemas
+          informáticos.
         </p>
         <p class="d-block fst-italic mb-3">
-          Crear un sistema no es como construír un edificio y ya está, es más como plantar un jardín.
-          <br>Es algo que se debe cuidar y mantener, por eso <b>¡haz el código legible!</b>
+          Crear un sistema no es como construír un edificio y ya está, es más
+          como plantar un jardín.
+          <br />Es algo que se debe cuidar y mantener, por eso <b
+            >¡haz el código legible!</b
+          >
         </p>
         <div class="row mb-3">
-          {[
-            {title: 'Natalicio', value: '24 Octubre 1996 (Generación Y)'},
-            {title: 'Correo', value: 'contacto@alejandrocr.co <a href="mailto:contacto@alejandrocr.co"><i class="fa-solid fa-envelope"></i></a>'},
-            {title: 'Residencia', value: 'Colombia'},
-            {title: 'Idiomas', value: 'Español, English'},
-          ].map(({title, value}) => (
-            <div class="col-12 mb-3 col-md-6 mb-md-2">
-              <i class="fa-solid fa-chevron-right"></i>
-              <strong>{title}:</strong>
-              <span set:html={value}></span>
-            </div>
-          ))}
+          {
+            [
+              { title: "Natalicio", value: "24 Octubre 1996 (Generación Y)" },
+              {
+                title: "Correo",
+                value:
+                  'contacto@alejandrocr.co <a href="mailto:contacto@alejandrocr.co"><i class="fa-solid fa-envelope"></i></a>',
+              },
+              { title: "Residencia", value: "Colombia" },
+              { title: "Idiomas", value: "Español, English" },
+            ].map(({ title, value }) => (
+              <div class="col-12 mb-3 col-md-6 mb-md-2">
+                <i class="fa-solid fa-chevron-right" />
+                <strong>{title}:</strong>
+                <span set:html={value} />
+              </div>
+            ))
+          }
         </div>
       </div>
 
       <div class="row mb-5">
-        <h3 class="text-primary mb-3">Mis habilidades de gestión de proyectos</h3>
-        {[
-          'Especificación de requerimientos de software (SRS)',
-          'Documentación de software',
-          'Diagramas UML',
-          'Metodologías ágiles (Scrum)',
-          'Desarrollo guiado por pruebas (TDD)',
-          'Arquitectura de software en capas',
-          'Arquitectura de software hexagonal',
-        ].map((skill) => (
-          <div class="col-12 mb-3 col-md-6 mb-md-2">
-            <i class="fa-regular fa-circle-check"></i>
-            <strong>{skill}</strong>
-          </div>
-        ))}
+        <h3 class="text-primary mb-3">
+          Mis habilidades de gestión de proyectos
+        </h3>
+        {
+          [
+            "Especificación de requerimientos de software (SRS)",
+            "Documentación de software",
+            "Diagramas UML",
+            "Metodologías ágiles (Scrum)",
+            "Desarrollo guiado por pruebas (TDD)",
+            "Arquitectura de software en capas",
+            "Arquitectura de software hexagonal",
+          ].map((skill) => (
+            <div class="col-12 mb-3 col-md-6 mb-md-2">
+              <i class="fa-regular fa-circle-check" />
+              <strong>{skill}</strong>
+            </div>
+          ))
+        }
       </div>
 
       <div class="row mb-5">
         <h3 class="text-primary mb-3">Mis habilidades técnicas</h3>
-        {[
-          'Linux (Desktop & Server)',
-          'Git (GitHub & GitLab)',
-          'Python',
-          'Fastapi',
-          'Django (wsgi & asgi)',
-          'Javascript',
-          'Node JS',
-          'Typescript',
-          'React JS',
-          'Mapbox (realtime maps)',
-          'Semantic HTML5',
-          'Responsive and animated CSS3',
-          'Postgresql',
-          'Mysql',
-          'Mongodb',
-          'Redis',
-          'Nginx',
-          'Rest API',
-          'Websockets',
-          'Domain names (DNS records)',
-          'Docker',
-          'Amazon Web Services (AWS)',
-        ].map((skill) => (
-          <div class="col-12 mb-3 col-md-4 mb-md-2">
-            <i class="fa-regular fa-circle-check"></i>
-            <strong>{skill}</strong>
-          </div>
-        ))}
+        {
+          [
+            "Linux (Desktop & Server)",
+            "Git (GitHub & GitLab)",
+            "Python",
+            "Fastapi",
+            "Django (wsgi & asgi)",
+            "Javascript",
+            "Node JS",
+            "Typescript",
+            "React JS",
+            "Mapbox (realtime maps)",
+            "Semantic HTML5",
+            "Responsive and animated CSS3",
+            "Postgresql",
+            "Mysql",
+            "Mongodb",
+            "Redis",
+            "Nginx",
+            "Rest API",
+            "Websockets",
+            "Domain names (DNS records)",
+            "Docker",
+            "Amazon Web Services (AWS)",
+          ].map((skill) => (
+            <div class="col-12 mb-3 col-md-4 mb-md-2">
+              <i class="fa-regular fa-circle-check" />
+              <strong>{skill}</strong>
+            </div>
+          ))
+        }
       </div>
+    </section>
 
-		</section>
+    <section class="resume no-selectable bg-light text-dark rounded-4 mb-5">
+      <div class="px-3 py-3 px-md-5 py-md-5">
+        <div class="mb-4">
+          <h2 class="text-primary text-center text-md-start">
+            Trabajos realizados
+          </h2>
+        </div>
 
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Labor en Empresas</h3>
+            <div class="resume-item">
+              <h4>Desarrollador de software en Deltec</h4>
+              <h5>Feb. 2022 - Actualidad</h5>
+              <ul>
+                <li>
+                  Desarrollar las funcionalidades requeridas para la plataforma
+                  de ordenes de servicio que utilizan las empresas públicas para
+                  gestionar a los técnicos en terreno.
+                </li>
+                <li>
+                  Desarrollar las funcionalidades requeridas para la plataforma
+                  de gestión interna de la empresa.
+                </li>
+                <li>
+                  Realizar pruebas unitarias para asegurar la calidad del
+                  software.
+                </li>
+                <li>
+                  Coordinar el despliegue de las versiones de la plataforma y
+                  las aplicaciones a producción.
+                </li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Desarrollador de software en Eventech</h4>
+              <h5>Oct. 2020 - Ene. 2022</h5>
+              <ul>
+                <li>
+                  Crear nuevas experiencias de usuario para la plataforma de
+                  eventos virtuales. Y desarrollar las funcionalidades que
+                  permitan estas experiencias.
+                </li>
+                <li>
+                  Gestionar las bases de datos de usuarios y patrocinadores.
+                  Generar informes de estado para la inteligencia del negocio y
+                  los resultados de los eventos.
+                </li>
+                <li>
+                  Administrar los servidores de la compañía, realizar las
+                  migraciones y preparaciones necesarias en caso de cambio de
+                  servidores y dar soporte a los usuarios.
+                </li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Desarrollador de software en Jikkosoft</h4>
+              <h5>Oct. 2019 - Feb. 2020</h5>
+              <ul>
+                <li>
+                  Desarrollar las funcionalidades requeridas para la plataforma
+                  de facturación de impuestos del alumbrado público.
+                </li>
+                <li>
+                  Realizar consultas eficientes en grandes bases de datos para
+                  obtener la información requerida en el menor tiempo posible.
+                </li>
+                <li>
+                  Realizar las pruebas unitarias y de integración para asegurar
+                  la calidad del software.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Proyectos Freelance</h3>
+            <div class="resume-item">
+              <h4>Plataforma educativa</h4>
+              <h5>2020 - 2021</h5>
+              <p><em>Para la Fundación HRBC</em></p>
+              <p>
+                Se puso en línea la plataforma educativa de HRBC para dictar el
+                Diplomado de Educación Inclusiva. La plataforma permite a los
+                docentes gestionar el contenido de las clases, los exámenes,
+                talleres, foros y las notas de los estudiantes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />
 </Layout>
+
+<style>
+.resume .resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #050d18;
+}
+
+.resume .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #1f5297;
+  position: relative;
+}
+
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #050d18;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+  font-size: 16px;
+  background: #e4edf9;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+  padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+  padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #1f5297;
+}
+</style>
