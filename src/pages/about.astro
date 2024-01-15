@@ -10,10 +10,121 @@ import NavBarTop from '../components/NavBarTop.astro';
   <header class="container mb-5">
     <section class="no-selectable bg-black text-light rounded-4">
 			<div class="py-3">
-				<h1 class="h4 d-block text-center animate-name">Acerca de mí</h1>
+				<h1 class="h4 d-block text-center">Acerca de mí</h1>
 			</div>
 		</section>
   </header>
+
+  <main class="container mb-5">
+
+    <section class="no-selectable bg-light text-dark rounded-4 mb-5">
+			<div class="px-3 py-3 px-md-5 py-md-5">
+        <div class="row">
+          <div class="col-md-5 mb-4 mb-md-0 text-center">
+            <img src="https://picsum.photos/800" alt="Alejandro Carrasco Rodríguez" class="img-fluid rounded-4" style="max-height: 22rem;" />
+          </div>
+          <div class="col-md-7">
+            <h2 class="text-primary mb-4 text-center text-md-start">¡Bienvenidos a la era digital!</h2>
+            <p class="d-block">
+              En nuestro mundo hiperconectado,
+              los protagonistas son quienes entienden cómo funciona la tecnología de la que tanto dependen.
+              <b>Mi nombre es Alejandro y soy Ingeniero en Sistemas.</b>
+              Me gusta crear soluciones a problemas complejos y técnicamente desafiantes,
+              por lo que siempre estoy dispuesto a aprender y enfrentar nuevos retos.
+              <b>Tengo como propósito contribuír de manera significativa a la sociedad, a través de la tecnología,
+              para mejorar la calidad de vida de las personas.</b>
+            </p>
+            <p class="d-block">
+              <b>Me apasiona la tecnología y las historias</b>,
+              por lo que encontrarás mucho más que contenido técnico en mi sitio.
+            </p>
+          </div>
+        </div>
+			</div>
+		</section>
+
+    <section class="no-selectable bg-light text-dark rounded-4 mb-5 p-5">
+
+			<div class="mb-5">
+        <h2 class="text-primary text-center text-md-start mb-3">Analista y Desarrollador de Software</h2>
+        <p class="d-block mb-3">
+          <b>Mi objetivo</b> es ser <b>Arquitecto de Soluciones</b>, por lo que estoy enfocado en dominar
+          <b>las mejores prácticas en análisis, desarrollo y despliegue</b> de sistemas informáticos.
+        </p>
+        <p class="d-block fst-italic mb-3">
+          Crear un sistema no es como construír un edificio y ya está, es más como plantar un jardín.
+          <br>Es algo que se debe cuidar y mantener, por eso <b>¡haz el código legible!</b>
+        </p>
+        <div class="row mb-3">
+          {[
+            {title: 'Natalicio', value: '24 Octubre 1996 (Generación Y)'},
+            {title: 'Correo', value: 'contacto@alejandrocr.co <a href="mailto:contacto@alejandrocr.co"><i class="fa-solid fa-envelope"></i></a>'},
+            {title: 'Residencia', value: 'Colombia'},
+            {title: 'Idiomas', value: 'Español, English'},
+          ].map(({title, value}) => (
+            <div class="col-12 mb-3 col-md-6 mb-md-2">
+              <i class="fa-solid fa-chevron-right"></i>
+              <strong>{title}:</strong>
+              <span set:html={value}></span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <h3 class="text-primary mb-3">Mis habilidades de gestión de proyectos</h3>
+        {[
+          'Especificación de requerimientos de software (SRS)',
+          'Documentación de software',
+          'Diagramas UML',
+          'Metodologías ágiles (Scrum)',
+          'Desarrollo guiado por pruebas (TDD)',
+          'Arquitectura de software en capas',
+          'Arquitectura de software hexagonal',
+        ].map((skill) => (
+          <div class="col-12 mb-3 col-md-6 mb-md-2">
+            <i class="fa-regular fa-circle-check"></i>
+            <strong>{skill}</strong>
+          </div>
+        ))}
+      </div>
+
+      <div class="row mb-5">
+        <h3 class="text-primary mb-3">Mis habilidades técnicas</h3>
+        {[
+          'Linux (Desktop & Server)',
+          'Git (GitHub & GitLab)',
+          'Python',
+          'Fastapi',
+          'Django (wsgi & asgi)',
+          'Javascript',
+          'Node JS',
+          'Typescript',
+          'React JS',
+          'Mapbox (realtime maps)',
+          'Semantic HTML5',
+          'Responsive and animated CSS3',
+          'Postgresql',
+          'Mysql',
+          'Mongodb',
+          'Redis',
+          'Nginx',
+          'Rest API',
+          'Websockets',
+          'Domain names (DNS records)',
+          'Docker',
+          'Amazon Web Services (AWS)',
+        ].map((skill) => (
+          <div class="col-12 mb-3 col-md-4 mb-md-2">
+            <i class="fa-regular fa-circle-check"></i>
+            <strong>{skill}</strong>
+          </div>
+        ))}
+      </div>
+
+		</section>
+
+  </main>
 
   <Footer />
 </Layout>
