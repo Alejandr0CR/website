@@ -14,9 +14,22 @@ const bodyClassName = `bg-${theme}`;
 	<head>
     <!-- meta -->
 		<meta charset="UTF-8" />
-		<meta name="description" content="AlejandroCR website" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="contacto@alejandrocr.co">
+		<meta name="description" content="En nuestro mundo hiperconectado, los protagonistas son quienes entienden cómo funciona la tecnología de la que tanto dependemos." />
+		<meta name="Keywords" content="alejandrocr, personal, portfolio, blog, technology, software, writing">
     <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- open graph -->
+		<meta property="og:description" content="En nuestro mundo hiperconectado, los protagonistas son quienes entienden cómo funciona la tecnología de la que tanto dependemos." />
+		<meta property="og:image" content="/images/favicon.png" />
+		<meta property="og:title" content={title} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://www.alejandrocr.co" />
+
+		<!-- redirect -->
+		<link rel="canonical" href="https://www.alejandrocr.co" />
 
     <!-- links -->
 		<link rel="icon" type="image/png" href="/images/favicon.png" />
