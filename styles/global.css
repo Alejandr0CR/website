@@ -1,3 +1,13 @@
+/*
+Brakepoints
+X-Small ... <576px
+Small ... ≥576px
+Medium ... ≥768px
+Large ... ≥992px
+Extra large ... ≥1200px
+Extra extra large ... ≥1400px
+*/
+
 html {
   min-height: 100vh;
   min-width: 100%;
@@ -37,4 +47,20 @@ li {
 .py-6 {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.px-reader {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .px-reader {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+.text-justify {
+  text-align: justify !important;
 }
