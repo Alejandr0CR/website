@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /docs
+Disallow: /bootstrap5
+Disallow: /data
+Disallow: /fontawesome
+Disallow: /images
+Disallow: /popper
+Disallow: /styles
+User-agent: GPTBot
+Disallow: /
