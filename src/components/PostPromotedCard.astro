@@ -1,0 +1,43 @@
+---
+import { Post } from '../models/posts';
+
+interface Props {
+  post: Post;
+}
+
+enum direction {
+  horizontal = 'row',
+  vertical = 'column',
+};
+
+const post = Astro.props.post;
+
+const card = post.card;
+
+const image = post.image;
+
+---
+<a class=`w-100 ${ card?.size === 'small' ? 'w-md-100' : 'w-md-75' }` href=`/blog/${post.slug}`>
+  <div class=`card w-100 flex-md-${direction[card?.direction || 'vertical']}`>
+    <img src=`${image?.url}` height="100px" class="card-img-top" alt=`${image?.alt}`>
+    <div class=`card-body ${card?.direction === 'horizontal' ? 'w-100' : ''}`>
+      <h5 class="card-title">{post.title}</h5>
+      <p class="card-text">{post.summary}</p>
+    </div>
+  </div>
+</a>
+
+<style>
+.card {
+  border: unset;
+}
+.card, .card-body {
+  height: 16rem;
+  overflow: hidden;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+</style>

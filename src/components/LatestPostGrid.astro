@@ -1,205 +1,36 @@
 ---
+import { Card, ImageContent, Post } from '../models/posts';
+import PostPromotedCard from '../components/PostPromotedCard.astro';
+
 interface Props {
-  src: string;
+  //
 }
 
-const { src } = Astro.props;
-
----
-<section id="latest-post-grid" class="row text-light mb-5 px-5 g-5" data-src={src}>
-</section>
-
-<style is:global>
-.card {
-  border: unset;
-}
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
-  transition: transform 0.3s ease-in-out;
-}
-</style>
-
-<script>
-
-// Utils
-
-/**
- * @param {any} value
- * @returns {Boolean}
- */
-function isValuable(value=null) {
-
-  if (value === undefined) {
-    return false;
-  }
-
-  if (value === null) {
-    return false;
-  }
-
-  if(Object.is(value, NaN)) {
-    return false;
-  }
-
-  return true;
+enum size {
+  small = '4',
+  medium = '6',
+  large = '12',
 };
 
-// Model
-class Post {
-  slug = null;
-  image = null;
-  title = null;
-  summary = null;
-  size = null;
-  direction = null;
-  tags = null;
-  body = null;
+const posts: Post[] = [
+//   new Post(
+//     'slug',
+//     'title',
+//     'Officia do minim duis labore commodo est magna officia cillum. Id laboris ullamco est nostrud minim quis culpa consectetur occaecat. Cillum mollit cillum cillum proident laboris proident dolor enim eiusmod. Aute excepteur sit dolor sunt nulla sunt mollit est est enim nulla. Laborum cupidatat sunt ullamco nostrud deserunt adipisicing proident occaecat ex. Aliquip Lorem mollit sit amet eu mollit consequat minim officia ad nulla do.',
+//     'author',
+//     'category',
+//     new ImageContent(new URL('https://picsum.photos/1600/1000'), 'alt', 'caption'),
+//     new Card('small', 'vertical', true),
+//   ),
+];
 
-  /**
-   * @param {Object | null} initials
-   * @param {string} initials.slug
-   * @param {string} initials.image
-   * @param {string} initials.title
-   * @param {string} initials.summary
-   * @param {string} initials.size
-   * @param {string} initials.direction
-   * @param {Array} initials.tags
-   * @param {Array} initials.body
-   */
-  constructor(initials) {
-
-    if (!(initials instanceof Object)) {
-      throw new Error('initials is not an object');
-    }
-
-    const { slug, image, title, summary, size, direction } = initials;
-
-    if (!isValuable(slug)) {
-      throw new Error('slug is not valuable');
-    }
-
-    if (!isValuable(image)) {
-      throw new Error('image is not valuable');
-    }
-
-    if (!isValuable(title)) {
-      throw new Error('title is not valuable');
-    }
-
-    if (!isValuable(summary)) {
-      throw new Error('summary is not valuable');
-    }
-
-    if (!isValuable(size)) {
-      throw new Error('size is not valuable');
-    }
-
-    if (!isValuable(direction)) {
-      throw new Error('direction is not valuable');
-    }
-
-    this.slug = slug;
-    this.image = image;
-    this.title = title;
-    this.summary = summary;
-    this.size = size;
-    this.direction = direction;
-    this.tags = [];
-    this.body = [];
-  }
-}
-
-// Elements
-const latestPostGridSection = document.getElementById('latest-post-grid');
-
-// Functions
-function createPostCard(post) {
-
-  if (!(post instanceof Post)) {
-    throw new Error('post model is not an instance of Post');
-  }
-
-  const size = (
-    post.size === 'small' ? '4' :
-    post.size === 'medium' ? '6' :
-    post.size === 'large' ? '12' :
-    '12'
-  )
-
-  const direction = (
-    post.direction === 'horizontal' ? 'row' :
-    post.direction === 'vertical' ? 'column' :
-    'column'
-  )
-
-  const html = `
-    <div class="col-12 col-md-${size} d-flex justify-content-center">
-      <a class="w-100 ${ post.size === 'small' ? 'w-md-100' : 'w-md-75' }" href="/blog/${post.slug}">
-        <div class="card w-100 flex-md-${direction}">
-          <img src="${post.image}" height="250px" class="card-img-top" alt="${post.title}">
-          <div class="card-body ${post.direction === 'horizontal' ? 'w-100' : ''}">
-            <h5 class="card-title">${post.title}</h5>
-            <p class="card-text">${post.summary}</p>
-          </div>
-        </div>
-      </a>
+---
+<section id="latest-post-grid" class="row text-light mb-5 px-5 g-5">
+  {
+    posts.map((post) => (
+    <div class={`col-12 col-md-${size[post?.card?.size || 'small']} justify-content-center`}>
+      <PostPromotedCard post={post} />
     </div>
-  `;
-
-  return html;
-}
-
-// On load
-window.addEventListener('DOMContentLoaded', function(e) {
-  const fetchTarget = latestPostGridSection.dataset.src;
-
-  const fetchOptions = {method: 'GET', headers: {'Content-Type': 'application/json'}};
-
-  console.log('start loading');
-
-  fetch(fetchTarget, fetchOptions)
-    .then(response => new Promise((resolve, reject) => {
-
-      response
-        .json()
-        .then(data => {
-          if (response.ok) return data;
-          console.warn(data); // 4xx 5xx
-          throw new Error(`${response.status} ${response.statusText}`);
-        })
-
-        .then(rawData => {
-          return rawData.filter((raw) => raw.promoted && raw.promoted === true);
-        })
-
-        .then(rawData => {
-          resolve(rawData.map((raw) => new Post(raw)))
-        })
-
-        .catch(error => reject(error));
-
-    }))
-
-    // on data
-    .then((modelsList) => {
-
-      if (!Array.isArray(modelsList)) {
-        throw new Error('modelsList is not an array');
-      }
-
-      const html = modelsList.map(createPostCard).join('');
-
-      if (latestPostGridSection) {
-        latestPostGridSection.innerHTML = html;
-      }
-
-    })
-
-    // on error
-    .catch(error => console.error(error))
-
-    // stop loading
-    .finally(() => console.log('stop loading'));
-});
-</script>
+    ))
+  }
+</section>
