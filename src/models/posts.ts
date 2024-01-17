@@ -3,7 +3,7 @@ abstract class Content {
 }
 
 
-class ImageContent extends Content {
+export class ImageContent extends Content {
   constructor(
     public url : (null | URL) = null,
     public alt : (null | string) = null,
@@ -14,7 +14,7 @@ class ImageContent extends Content {
 }
 
 
-class TextContent extends Content {
+export class TextContent extends Content {
   constructor(
     public text: (null | string) = null,
     ) {
@@ -23,7 +23,7 @@ class TextContent extends Content {
 }
 
 
-class CodeContent extends Content {
+export class CodeContent extends Content {
   constructor(
     public code: (null | string) = null,
     public language: (null | string) = null,
@@ -33,7 +33,7 @@ class CodeContent extends Content {
 }
 
 
-class VideoContent extends Content {
+export class VideoContent extends Content {
   constructor(
     public url: (null | URL) = null,
     ) {
@@ -42,7 +42,7 @@ class VideoContent extends Content {
 }
 
 
-class AudioContent extends Content {
+export class AudioContent extends Content {
   constructor(
     public url: (null | URL) = null,
     ) {
@@ -51,7 +51,7 @@ class AudioContent extends Content {
 }
 
 
-class LinkContent extends Content {
+export class LinkContent extends Content {
   constructor(
     public url: (null | URL) = null,
     public text: (null | string) = null,
@@ -61,7 +61,7 @@ class LinkContent extends Content {
 }
 
 
-class Card {
+export class Card {
   constructor(
     public size: ('small' | 'medium' | 'large') = 'medium',
     public direction: ('horizontal' | 'vertical') = 'vertical',
@@ -71,17 +71,18 @@ class Card {
 }
 
 
-class Post {
+export class Post {
   constructor(
-    public slug: string = '',
-    public title: string = '',
+    public slug: (null |string) = null,
+    public title: (null |string) = null,
+    public summary: (null | string) = null,
+    public author: (null | string) = null,
+    public category: (null | string) = null,
     public image: (null | ImageContent) = null,
-    public summary: string = '',
-    public tags: string[] = [],
-    public body: Content[] = [],
-    public card: Card = new Card(),
-    public createdAt: Date = new Date(),
-    public updatedAt: Date = new Date(),
+    public card: (null | Card) = null,
+    public tags: (string[]) = [],
+    public createdAt: (null | Date) = new Date(),
+    public updatedAt: (null | Date) = new Date(),
     ) {
   }
 }
