@@ -1,13 +1,21 @@
 ---
+import { Card, ImageContent, Post } from '../models/posts';
+
+interface Props {
+  post: Post;
+}
+
+const post = Astro.props.post;
+
+const image = post.image;
+
 ---
-<a href="#">
+<a href=`/blog/${post.category}/${post.slug}`>
   <div class="card overflow-hidden flex-row w-100 h-100 p-1">
-    <img class="card-img-top" src="https://picsum.photos/300" alt="Card image cap">
+    <img class="card-img-top" src=`${ image?.url }` alt=`${ image?.alt }`>
     <div class="card-body">
-      <h5 class="card-title text-primary">Card title</h5>
-      <p class="card-text">
-        Et minim aliqua ullamco excepteur eiusmod ex quis adipisicing esse. Reprehenderit excepteur ullamco dolor officia consequat occaecat proident reprehenderit id quis cupidatat tempor. Ullamco officia sunt adipisicing reprehenderit elit et laborum amet.
-      </p>
+      <h5 class="card-title text-primary">{ post.title }</h5>
+      <p class="card-text">{ post.summary }</p>
     </div>
   </div>
 </a>
