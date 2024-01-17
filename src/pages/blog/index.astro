@@ -2,21 +2,36 @@
 import Layout from '../../layouts/Layout.astro';
 import Footer from '../../components/Footer.astro';
 import NavBarTop from '../../components/NavBarTop.astro';
-import PostWideCard from '../../components/PostWideCard.astro';
-import { Card, ImageContent, Post } from '../../models/posts';
 
-const posts: Post[] = [
-  // new Post(
-  //   'slug',
-  //   'title',
-  //   'Officia do minim duis labore commodo est magna officia cillum. Id laboris ullamco est nostrud minim quis culpa consectetur occaecat. Cillum mollit cillum cillum proident laboris proident dolor enim eiusmod. Aute excepteur sit dolor sunt nulla sunt mollit est est enim nulla. Laborum cupidatat sunt ullamco nostrud deserunt adipisicing proident occaecat ex. Aliquip Lorem mollit sit amet eu mollit consequat minim officia ad nulla do.',
-  //   'author',
-  //   'category',
-  //   new ImageContent(new URL('https://picsum.photos/1600/1000'), 'alt', 'caption'),
-  //   new Card('small', 'vertical', true),
-  // ),
+interface Card {
+  title: string;
+  description: string;
+  link: string;
+}
+
+const cards: Card[] = [
+  {
+    title: 'Conocimiento 🧠',
+    description: 'Apuntes sobre conceptos y herramientas que he aprendido.',
+    link: '/blog/short',
+  },
+  {
+    title: 'Laboratorios 💎',
+    description: 'Proyectos que ensamblan los conocimientos adquiridos en fórmulas útiles.',
+    link: '/blog/laboratory',
+  },
+  {
+    title: 'Relatos 💪',
+    description: 'Anécdotas de mi vida e historias de ficción que he escrito.',
+    link: '/blog/story',
+  },
+
+  {
+    title: 'Reflexiones 💭',
+    description: 'Opiniones y pensamientos sobre temas que me interesan.',
+    link: '/blog/thought',
+  },
 ];
-
 
 ---
 <Layout theme="dark" title="Blog | Alejandro Carrasco Rodríguez">
@@ -30,23 +45,41 @@ const posts: Post[] = [
 		</section>
   </header>
 
-  <main class="container">
-    <div class="row w-100">
+  <main class="container mb-5">
+    <div class="row">
       {
-        posts.map((post) => (
-          <div class="card-container col-12 mb-3">
-            <PostWideCard post={post} />
+        cards.map((card) => (
+          <div class="col-12 col-md-4 g-3">
+            <a href={card.link}>
+              <div class="card card-container bg-black text-light">
+                <div class="card-body">
+                  <h2 class="h5">{card.title}</h2>
+                  <p class="card-text">
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
         ))
       }
-    </div>
+
   </main>
 
   <Footer />
 </Layout>
 
 <style>
-.card-container {
+.card {
+  border: unset;
+}
+.card, .card-body {
   height: 10rem;
+  overflow: hidden;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
+  transition: transform 0.3s ease-in-out;
 }
 </style>
