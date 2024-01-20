@@ -333,7 +333,7 @@ ASGI es la forma de ejecutar Python asíncrono en un servidor web.
         Para implementar ASGI en tu proyecto, debes usar una herramienta como Uvicorn.
 </p> <h2 class="h4 text-primary mb-4" data-astro-cid-oinsp4u5>
 Crear usuario que controlará los recursos de la aplicación
-</h2> <ol class="d-block text-justify fs-5 px-md-5 mb-5" data-astro-cid-oinsp4u5> <li class="mb-5" data-astro-cid-oinsp4u5>Iniciar sesión como usuario root en el servidor.</li> <li class="mb-5" data-astro-cid-oinsp4u5>
+</h2> <ol class="d-block text-justify fs-5 px-md-5 mb-5" data-astro-cid-oinsp4u5> <li class="mb-5" data-astro-cid-oinsp4u5>Inicia sesión como usuario root en el servidor.</li> <li class="mb-5" data-astro-cid-oinsp4u5>
 Crea un usuario con su respectivo directorio personal usando el comando
 <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
 useradd djangouser -g www-data -s /bin/bash -m -d /home/djangouser
@@ -361,7 +361,7 @@ python3 -m venv venv
 Actualiza el gestor de paquetes <i data-astro-cid-oinsp4u5>pip</i> usando el comando
 <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
 venv/bin/pip3 install --upgrade pip
-</code> <ul data-astro-cid-oinsp4u5> <li data-astro-cid-oinsp4u5>Nótese que a partir de este punto <b data-astro-cid-oinsp4u5>debes usar los binarios del entorno virtual</b> y no los del sistema siempre que sea posible.</li> <li data-astro-cid-oinsp4u5>Es posible usar sólo el nombre del binario sin escribir la ruta relativa al "activar" el entorno virtual usando el comando <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>source venv/bin/activate</code></li> </ul> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
+</code> <ul data-astro-cid-oinsp4u5> <li data-astro-cid-oinsp4u5>Nótese que a partir de este punto <b data-astro-cid-oinsp4u5>debes usar los binarios del entorno virtual</b> y no los del sistema siempre que sea posible.</li> <li data-astro-cid-oinsp4u5>Es posible usar sólo el nombre del binario sin escribir la ruta relativa al "activar" el entorno virtual usando el comando <code data-astro-cid-oinsp4u5>source venv/bin/activate</code></li> </ul> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
 Instala las dependencias del proyecto usando el comando
 <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
 venv/bin/pip3 install -r djangoapp/requirements.txt
@@ -405,7 +405,7 @@ Probemos el proyecto hasta ahora
 Inicia el proyecto usando el siguiente comando
 <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
 venv/bin/python3 -m gunicorn -c gunicorn.conf.py --check-config --print-config djangoapp.asgi:application
-</code> <ul data-astro-cid-oinsp4u5> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>--check-config</b> es una opción para comprobar la configuración de gunicorn antes de iniciar la aplicación.</li> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>--print-config</b> es una opción para mostrar la configuración de gunicorn antes de iniciar la aplicación.</li> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>djangoapp.asgi:application</b> es el módulo (archivo) y la aplicación (python) que se ejecutará.</li> </ul> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
+</code> <ul data-astro-cid-oinsp4u5> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>-c gunicorn.conf.py</b> es una opción para indicar el archivo de configuración de gunicorn.</li> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>--check-config</b> es una opción para comprobar la configuración de gunicorn antes de iniciar la aplicación.</li> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>--print-config</b> es una opción para mostrar la configuración de gunicorn antes de iniciar la aplicación.</li> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>djangoapp.asgi:application</b> es el módulo (archivo) y la aplicación (python) que se ejecutará.</li> </ul> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
 Accede a la IP del servidor en el puerto 8000 usando un navegador web
 </li> </ol> </section> </main> <div class="d-block py-6 py-md-5">&nbsp;</div> <footer class="position-absolute bottom-0 w-100"> <div class="container bg-black text-light py-3 rounded-top-3"> <nav> <div class="text-center mb-3"> <a class="d-block d-md-inline me-md-4 py-2" href="https://github.com/virtualitems" target="_blank">
 Github <i class="fab fa-github"></i> </a> <a class="d-block d-md-inline me-md-4 py-2" href="https://www.linkedin.com/in/alejandro-carrasco-rodr%C3%ADguez-a06a37175/" target="_blank">
