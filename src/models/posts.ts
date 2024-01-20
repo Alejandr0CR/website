@@ -62,6 +62,14 @@ export class LinkContent extends Content {
 
 
 export class Card {
+
+  static DIRECTION_HORIZONTAL: 'horizontal' = 'horizontal';
+  static DIRECTION_VERTICAL: 'vertical' = 'vertical';
+
+  static SIZE_SMALL: 'small' = 'small';
+  static SIZE_MEDIUM: 'medium' = 'medium';
+  static SIZE_LARGE: 'large' = 'large';
+
   constructor(
     public size: ('small' | 'medium' | 'large') = 'medium',
     public direction: ('horizontal' | 'vertical') = 'vertical',
@@ -72,6 +80,12 @@ export class Card {
 
 
 export class Post {
+
+  static CATEGORY_LABORATORY: 'laboratory' = 'laboratory';
+  static CATEGORY_SHORT: 'short' = 'short';
+  static CATEGORY_STORY: 'story' = 'story';
+  static CATEGORY_THOUGHT: 'thought' = 'thought';
+
   constructor(
     public slug: (null |string) = null,
     public title: (null |string) = null,
@@ -85,4 +99,12 @@ export class Post {
     public updatedAt: (null | Date) = new Date(),
     ) {
   }
+}
+
+
+export enum PostCategory {
+  LABORATORY = 'laboratory',
+  SHORT = 'short',
+  STORY = 'story',
+  THOUGHT = 'thought',
 }
