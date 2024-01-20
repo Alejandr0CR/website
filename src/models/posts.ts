@@ -5,7 +5,7 @@ abstract class Content {
 
 export class ImageContent extends Content {
   constructor(
-    public url : (null | URL) = null,
+    public url : string,
     public alt : (null | string) = null,
     public caption : (null | string) = null,
     ) {
