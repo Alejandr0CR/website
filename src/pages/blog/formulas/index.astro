@@ -1,0 +1,28 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Footer from '../../../components/Footer.astro';
+import NavBarTop from '../../../components/NavBarTop.astro';
+
+---
+<Layout theme="dark" title="Blog | Teoría de fórmulas | Alejandro Carrasco Rodríguez">
+  <NavBarTop theme="dark" active="blog" />
+
+  <header class="container mb-4">
+    <section class="no-selectable bg-black text-light rounded-4">
+			<div class="py-3">
+				<h1 class="h4 d-block text-center">Teoría de fórmulas</h1>
+			</div>
+		</section>
+  </header>
+
+  <main class="container">
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+.card-container {
+  height: 10rem;
+}
+</style>
