@@ -1,0 +1,538 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Footer from "../../../components/Footer.astro";
+import NavBarTop from "../../../components/NavBarTop.astro";
+import postsList from '../../../data/laboratories';
+
+const post = postsList.find(post => post.slug === 'despliegue-django-nginx-asgi');
+
+
+---
+
+<!--
+### Crear usuario que controlará los recursos de la aplicación
+
+1. Iniciar sesión como usuario root
+2. Crear usuario con directorio personal
+
+```bash
+useradd djangouser -g www-data -s /bin/bash -m -d /home/djangouser
+```
+
+1. Crear contraseña para el usuario creado
+
+```bash
+passwd djangouser
+```
+
+---
+
+### Instalar aplicación y configurar directorios
+
+1. Iniciar sesión como “djangouser”
+2. Descargar proyecto
+
+```bash
+git clone https://example.com/djangoapp.git
+```
+
+1. Acceder al directorio del proyecto
+
+```bash
+cd djangoapp
+```
+
+1. Crear entorno virtual
+
+```bash
+python3 -m venv venv
+```
+
+1. Actualizar pip
+
+```bash
+venv/bin/pip3 install --upgrade pip
+```
+
+1. Instalar dependencias
+
+```bash
+venv/bin/pip3 install -r djangoapp/requirements.txt
+```
+
+1. Instalar dependencias de ejecución
+
+```bash
+venv/bin/pip3 install gunicorn uvicorn[standard]
+```
+
+1. Crear archivo de configuración para gunicorn
+
+```bash
+vim gunicorn.conf.py
+```
+
+```python
+from multiprocessing import cpu_count
+
+# as user
+user = 'djangouser'
+group = 'www-data'
+
+# unix domain socket
+bind = 'unix:/var/run/djangoapp/app.sock' # deshabilitar en pruebas
+timeout = 500
+
+# processing
+worker_class = 'uvicorn.workers.UvicornWorker'
+workers = cpu_count() * 2
+
+# paths
+chdir = '/home/djangouser/djangoapp'
+pythonpath = '/home/djangouser/djangoapp'
+
+# logging
+accesslog = '/var/log/djangoapp/gunicorn_access.log' # deshabilitar en pruebas
+errorlog = '/var/log/djangoapp/gunicorn_error.log' # deshabilitar en pruebas
+loglevel = 'info' # 'debug' en pruebas
+```
+
+- Prueba del proyecto
+    - Iniciar el proyecto usando los siguientes comandos y acceder a la IP del servidor en el puerto 8000
+
+```bash
+venv/bin/python3 -m gunicorn -c gunicorn.conf.py --check-config --print-config djangoapp.asgi:application
+venv/bin/python3 -m gunicorn -c gunicorn.conf.py --bind 0.0.0.0:8000 djangoapp.asgi:application
+```
+
+- Para conocer la IP del servidor
+
+```bash
+sudo apt update
+sudo apt install net-tools
+ifconfig
+```
+
+1. Crear directorio para almacenar los archivos estáticos
+
+```bash
+mkdir -m 755 -p /home/djangouser/djangoapp/static
+```
+
+- Prueba de propiedad y permisos del directorio static
+
+```bash
+namei -nom /home/djangouser/djangoapp/static
+```
+
+1. Crear directorio para almacenar los archivos multimedia
+
+```bash
+mkdir -m 755 -p /home/djangouser/djangoapp/media
+```
+
+- Prueba de propiedad y permisos del directorio media
+
+```bash
+namei -nom /home/djangouser/djangoapp/static
+```
+
+---
+
+### Configurar nginx
+
+1. Iniciar sesión como root
+2. Instalar NGINX en el servidor
+
+```bash
+apt install nginx
+```
+
+1. Crear directorio para logs de NGINX
+
+```bash
+mkdir -p /var/log/nginx/djangoapp
+```
+
+1. Acceder al directorio de NGINX
+
+```bash
+cd /etc/nginx
+```
+
+1. Crear archivo de configuración “proxy_params” para NGINX
+
+```bash
+vim proxy_params
+```
+
+```bash
+proxy_set_header Host $http_host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+```
+
+1. Crear archivo de configuración websocket_params para NGINX
+
+```bash
+vim proxy_params
+```
+
+```bash
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection $connection_upgrade;
+```
+
+1. Agregar variable $connection_upgrade a la configuración de NGINX
+
+```bash
+vim nginx.conf
+```
+
+```bash
+http {
+
+    # ...
+
+    map $http_upgrade $connection_upgrade {
+        default upgrade;
+        '' close;
+    }
+
+    # ...
+
+}
+```
+
+1. Crear archivo de configuración para el sitio de la aplicación
+
+```bash
+vim sites-available/djangoapp.conf
+```
+
+```bash
+upstream djangoapp {
+    server unix:/var/run/djangoapp/app.sock;
+}
+
+server {
+    listen 80;
+    server_name 127.0.0.1; # cambiar por la IP del servidor
+    charset utf-8;
+
+    access_log /var/log/nginx/djangoapp/access.log;
+    error_log /var/log/nginx/djangoapp/error.log;
+
+    location /media/ {
+        alias /home/djangouser/djangoapp/media/;
+    }
+
+    location /static/ {
+        alias /home/djangouser/djangoapp/static/;
+    }
+
+		# ruta de conexión para Websocket
+    location /ws/ {
+        proxy_pass http://djangoapp/ws/;
+        include proxy_params;
+        include websocket_params;
+    }
+
+		# ruta de conexión para HTTP
+    location / {
+        proxy_pass http://djangoapp/;
+        include proxy_params;
+    }
+
+    # error_page 500 502 503 504 /500.html;
+}
+```
+
+1. Crear enlace simbólico para habilitar el sitio
+
+```bash
+ln -s /etc/nginx/sites-available/djangoapp.conf /etc/nginx/sites-eneabled
+```
+
+- Prueba de NGINX
+
+```bash
+nginx -t
+```
+
+1. Reiniciar NGINX
+
+```bash
+systemctl restart nginx
+```
+
+---
+
+### Crear procesos de systemd
+
+1. Iniciar sesión como root
+2. Ingresar al directorio de procesos del sistema
+
+```bash
+cd /etc/systemd/system
+```
+
+1. Crear configuración del proceso de la aplicación
+
+```bash
+vim djangoapp.service
+```
+
+```bash
+[Unit]
+Description=Djangoapp daemon
+After=network.target
+
+[Service]
+Restart=on-abort
+RuntimeDirectory=djangoapp
+LogsDirectory=djangoapp
+ExecStart=/home/djangouser/djangoapp/venv/bin/python3 -OO -m gunicorn -c /home/djangouser/djangoapp/gunicorn.conf.py djangoapp.asgi:application
+User=djangouser
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
+```
+
+1. Cargar archivos de configuración creados para systemd
+
+```bash
+systemctl daemon-reload
+```
+
+1. Iniciar servicio de la aplicación
+
+```bash
+systemctl restart djangoapp.service
+systemctl status djangoapp.service
+```
+
+1. Activar servicio al reiniciar el servidor
+
+```bash
+systemctl enable djangoapp.service
+```
+
+- Probar el reinicio del sistema
+
+```bash
+sudo shutdown -r now
+sudo systemctl status djangoapp.service
+```
+-->
+
+<Layout theme="dark" title=`${post?.title} | Laboratorio | Alejandro Carrasco Rodríguez`>
+  <NavBarTop theme="dark" active="blog" />
+
+  <header class="container mb-3">
+    <section class="no-selectable bg-black text-light rounded-4">
+      <div class="py-3">
+        <h1 class="h4 d-block text-center">Laboratorio</h1>
+      </div>
+    </section>
+  </header>
+
+  <main class="container h-100 w-100 mb-5">
+    <section class="bg-light text-dark rounded-4 py-3 px-reader mb-5">
+
+      <div class="text-center mb-5">
+        <img class="w-100" src="/images/blog/despliegue-django-nginx-asgi.png" alt=`${post?.title}`>
+      </div>
+
+      <h1 class="h2 text-center text-primary mb-4">
+        {post?.title}
+      </h1>
+
+      <p class="d-block text-justify fs-5 px-md-5 mb-5">
+      </p>
+
+      <h2 class="h4 text-primary mb-4">
+        ¿Por qué usar Nginx?
+      </h2>
+
+      <p class="d-block text-justify fs-5 px-md-5 mb-5">
+        Nginx es actualmente uno de los servidores web con más características.
+        Es un servidor web de alto rendimiento con múltiples casos de uso.
+        Para una aplicación escalable y con diferentes tipos de servicios, Nginx es una
+        excelente opción.
+      </p>
+
+      <h2 class="h4 text-primary mb-4">
+        ¿Por qué usar ASGI y por qué con Uvicorn?
+      </h2>
+
+      <p class="d-block text-justify fs-5 px-md-5 mb-5">
+        ASGI es la forma de ejecutar Python asíncrono en un servidor web.
+        ASGI es compatible con HTTP y WebSockets, lo que permite que Django tenga funcionalidades en tiempo real.
+        Para implementar ASGI en tu proyecto, debes usar una herramienta como Uvicorn.
+      </p>
+
+      <h2 class="h4 text-primary mb-4">
+        Crear usuario que controlará los recursos de la aplicación
+      </h2>
+
+      <ol class="d-block text-justify fs-5 px-md-5 mb-5">
+        <li class="mb-5">Iniciar sesión como usuario root en el servidor.</li>
+        <li class="mb-5">
+          Crea un usuario con su respectivo directorio personal usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            useradd djangouser -g www-data -s /bin/bash -m -d /home/djangouser
+          </code>
+          <ul>
+            <li><b>djangouser</b> es el nombre del usuario que se creará.</li>
+            <li><b>www-data</b> es el grupo al que pertenecerá el usuario.</li>
+            <li><b>/bin/bash</b> es la shell que usará el usuario.</li>
+            <li><b>/home/djangouser</b> es el directorio personal del usuario.</li>
+          </ul>
+        </li>
+        <li>
+          Crea una contraseña para el usuario creado usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            passwd djangouser
+          </code>
+          A continuación, el sistema te pedirá que ingreses la contraseña dos veces.
+        </li>
+      </ol>
+
+      <h2 class="h4 text-primary mb-4">
+        Instalar aplicación y configurar directorios
+      </h2>
+
+      <ol class="d-block text-justify fs-5 px-md-5 mb-5">
+        <li class="mb-5">Iniciar sesión como el usuario <b>djangouser</b> en el servidor.</li>
+        <li class="mb-5">
+          Descarga el proyecto usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            git clone https://example.com/djangoapp.git
+          </code>
+          <ul>
+            <li><b>https://example.com/djangoapp.git</b> es la URL del repositorio, recuerda reemplazarla por la URL del repositorio de tu proyecto.</li>
+          </ul>
+        </li>
+        <li class="mb-5">
+          Accede al directorio del proyecto usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            cd djangoapp
+          </code>
+          <ul>
+            <li><b>djangoapp</b> es el nombre del directorio del proyecto que se crea al clonar el repositorio.</li>
+          </ul>
+        </li>
+        <li class="mb-5">
+          Crea un entorno virtual dentro del directorio del proyecto usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            python3 -m venv venv
+          </code>
+          <ul>
+            <li>El último <b>venv</b> es el nombre del directorio que se creará para el entorno virtual.</li>
+          </ul>
+        </li>
+        <li class="mb-5">
+          Actualiza el gestor de paquetes <i>pip</i> usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            venv/bin/pip3 install --upgrade pip
+          </code>
+          <ul>
+            <li>Nótese que a partir de este punto <b>debes usar los binarios del entorno virtual</b> y no los del sistema siempre que sea posible.</li>
+            <li>Es posible usar sólo el nombre del binario sin escribir la ruta relativa al "activar" el entorno virtual usando el comando <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">source venv/bin/activate</code></li>
+          </ul>
+        </li>
+        <li class="mb-5">
+          Instala las dependencias del proyecto usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            venv/bin/pip3 install -r djangoapp/requirements.txt
+          </code>
+        </li>
+        <li class="mb-5">
+          Instala las dependencias de ejecución usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            venv/bin/pip3 install gunicorn uvicorn[standard]
+          </code>
+        </li>
+        <li class="mb-5">
+          Crea un archivo de configuración para gunicorn usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            vim gunicorn.conf.py
+          </code>
+          <ul class="mb-2">
+            <li>El comando <code>vim</code> puede ser reemplazado por el editor de tu preferencia.</li>
+          </ul>
+          <span class="h5 mb-4">
+            El contenido del archivo debe ser el siguiente:
+          </span>
+          <pre class="bg-dark text-white rounded-2 my-1 p-2" style="white-space: pre-line;">
+            <p>
+              from multiprocessing import cpu_count
+
+              # as user
+              user = 'djangouser'
+              group = 'www-data'
+
+              # unix domain socket
+              bind = 'unix:/var/run/djangoapp/app.sock'
+              timeout = 500
+
+              # processing
+              worker_class = 'uvicorn.workers.UvicornWorker'
+              workers = cpu_count() * 2
+
+              # paths
+              chdir = '/home/djangouser/djangoapp'
+              pythonpath = '/home/djangouser/djangoapp'
+
+              # logging
+              accesslog = '/var/log/djangoapp/gunicorn_access.log' # deshabilitar en pruebas
+              errorlog = '/var/log/djangoapp/gunicorn_error.log' # deshabilitar en pruebas
+              loglevel = 'info'
+            </p>
+          </pre>
+        </li>
+      </ol>
+
+      <h2 class="h4 text-primary mb-4">
+        Probemos el proyecto hasta ahora
+      </h2>
+
+      <ol class="d-block text-justify fs-5 px-md-5 mb-5">
+        <li class="mb-5">
+          Inicia el proyecto usando el siguiente comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            venv/bin/python3 -m gunicorn -c gunicorn.conf.py --check-config --print-config djangoapp.asgi:application
+          </code>
+          <ul>
+            <li><b>--check-config</b> es una opción para comprobar la configuración de gunicorn antes de iniciar la aplicación.</li>
+            <li><b>--print-config</b> es una opción para mostrar la configuración de gunicorn antes de iniciar la aplicación.</li>
+            <li><b>djangoapp.asgi:application</b> es el módulo (archivo) y la aplicación (python) que se ejecutará.</li>
+          </ul>
+        </li>
+        <li class="mb-5">
+          Accede a la IP del servidor en el puerto 8000 usando un navegador web
+        </li>
+      </ol>
+
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+li b {
+  white-space: pre-line;
+  word-break: break-word;
+}
+ol li {
+  list-style: decimal;
+}
+ul li {
+  list-style: disc;
+}
+</style>
