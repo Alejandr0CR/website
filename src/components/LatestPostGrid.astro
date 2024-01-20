@@ -1,6 +1,21 @@
 ---
 import { Card, ImageContent, Post } from '../models/posts';
 import PostPromotedCard from '../components/PostPromotedCard.astro';
+import laboratories from '../data/laboratories';
+import shorts from '../data/shorts';
+import stories from '../data/stories';
+import thoughts from '../data/thoughts';
+
+const posts: Post[] = [
+  ...laboratories,
+  ...shorts,
+  ...stories,
+  ...thoughts,
+].filter(
+  (post) => post.card?.promoted
+).sort(
+  (a, b) => ((a.createdAt < b.createdAt) ? 1 : -1)
+);
 
 interface Props {
   //
@@ -12,17 +27,6 @@ enum size {
   large = '12',
 };
 
-const posts: Post[] = [
-//   new Post(
-//     'slug',
-//     'title',
-//     'Officia do minim duis labore commodo est magna officia cillum. Id laboris ullamco est nostrud minim quis culpa consectetur occaecat. Cillum mollit cillum cillum proident laboris proident dolor enim eiusmod. Aute excepteur sit dolor sunt nulla sunt mollit est est enim nulla. Laborum cupidatat sunt ullamco nostrud deserunt adipisicing proident occaecat ex. Aliquip Lorem mollit sit amet eu mollit consequat minim officia ad nulla do.',
-//     'author',
-//     'category',
-//     new ImageContent(new URL('https://picsum.photos/1600/1000'), 'alt', 'caption'),
-//     new Card('small', 'vertical', true),
-//   ),
-];
 
 ---
 <section id="latest-post-grid" class="row text-light mb-5 px-5 g-5">
