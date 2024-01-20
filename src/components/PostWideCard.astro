@@ -1,5 +1,5 @@
 ---
-import { Card, ImageContent, Post } from '../models/posts';
+import { Post } from '../models/posts';
 
 interface Props {
   post: Post;
@@ -10,23 +10,32 @@ const post = Astro.props.post;
 const image = post.image;
 
 ---
-<a href=`/blog/${post.category}/${post.slug}`>
-  <div class="card overflow-hidden flex-row w-100 h-100 p-1">
-    <img class="card-img-top" src=`${ image?.url }` alt=`${ image?.alt }`>
+<a class="d-inline-block h-100 w-100 w-md-100" href=`/blog/${post.category}/${post.slug}`>
+  <div class="card w-100 flex-md-row">
+    <img src=`${image?.url}` height="250rem" class="card-img-top" alt=`${image?.alt}`>
     <div class="card-body">
-      <h5 class="card-title text-primary">{ post.title }</h5>
-      <p class="card-text">{ post.summary }</p>
+      <h5 class="card-title text-primary text-center text-md-start">{post.title}</h5>
+      <p class="d-md-block card-text">{post.summary}</p>
     </div>
   </div>
 </a>
 
 <style>
-.card {
-  border: unset;
-}
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
-  transition: transform 0.3s ease-in-out;
+@media screen and (min-width: 768px) {
+  .card {
+    border: unset;
+    height: 10rem;
+  }
+
+  .card img {
+    height: 100%;
+    width: 40%;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
+    transition: transform 0.3s ease-in-out;
+  }
 }
 </style>

@@ -22,9 +22,9 @@ interface Props {
 }
 
 enum size {
-  small = '4',
-  medium = '6',
-  large = '12',
+  small = '3',
+  medium = '5',
+  large = '11',
 };
 
 
@@ -32,7 +32,7 @@ enum size {
 <section id="latest-post-grid" class="row text-light mb-5 px-5 g-5">
   {
     posts.map((post) => (
-    <div class={`col-12 col-md-${size[post?.card?.size || 'small']} justify-content-center`}>
+    <div class='col-12 offset-md-1 col-md-3 justify-content-center'>
       <PostPromotedCard post={post} />
     </div>
     ))
