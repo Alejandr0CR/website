@@ -95,7 +95,7 @@ export class Post {
     public image: (null | ImageContent) = null,
     public card: (null | Card) = null,
     public tags: (string[]) = [],
-    public createdAt: (null | Date) = new Date(),
+    public createdAt: (Date) = new Date(),
     public updatedAt: (null | Date) = new Date(),
     ) {
   }
