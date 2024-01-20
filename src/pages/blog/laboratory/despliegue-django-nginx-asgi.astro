@@ -380,7 +380,7 @@ sudo systemctl status djangoapp.service
       </h2>
 
       <ol class="d-block text-justify fs-5 px-md-5 mb-5">
-        <li class="mb-5">Iniciar sesión como usuario root en el servidor.</li>
+        <li class="mb-5">Inicia sesión como usuario root en el servidor.</li>
         <li class="mb-5">
           Crea un usuario con su respectivo directorio personal usando el comando
           <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
@@ -442,7 +442,7 @@ sudo systemctl status djangoapp.service
           </code>
           <ul>
             <li>Nótese que a partir de este punto <b>debes usar los binarios del entorno virtual</b> y no los del sistema siempre que sea posible.</li>
-            <li>Es posible usar sólo el nombre del binario sin escribir la ruta relativa al "activar" el entorno virtual usando el comando <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">source venv/bin/activate</code></li>
+            <li>Es posible usar sólo el nombre del binario sin escribir la ruta relativa al "activar" el entorno virtual usando el comando <code>source venv/bin/activate</code></li>
           </ul>
         </li>
         <li class="mb-5">
@@ -508,6 +508,7 @@ sudo systemctl status djangoapp.service
             venv/bin/python3 -m gunicorn -c gunicorn.conf.py --check-config --print-config djangoapp.asgi:application
           </code>
           <ul>
+            <li><b>-c gunicorn.conf.py</b> es una opción para indicar el archivo de configuración de gunicorn.</li>
             <li><b>--check-config</b> es una opción para comprobar la configuración de gunicorn antes de iniciar la aplicación.</li>
             <li><b>--print-config</b> es una opción para mostrar la configuración de gunicorn antes de iniciar la aplicación.</li>
             <li><b>djangoapp.asgi:application</b> es el módulo (archivo) y la aplicación (python) que se ejecutará.</li>
