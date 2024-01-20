@@ -477,7 +477,7 @@ sudo systemctl status djangoapp.service
               group = 'www-data'
 
               # unix domain socket
-              bind = 'unix:/var/run/djangoapp/app.sock'
+              bind = 'unix:/var/run/djangoapp/app.sock'  # deshabilitar en pruebas
               timeout = 500
 
               # processing
@@ -491,7 +491,7 @@ sudo systemctl status djangoapp.service
               # logging
               accesslog = '/var/log/djangoapp/gunicorn_access.log' # deshabilitar en pruebas
               errorlog = '/var/log/djangoapp/gunicorn_error.log' # deshabilitar en pruebas
-              loglevel = 'info'
+              loglevel = 'info'  # 'debug' en pruebas
             </p>
           </pre>
         </li>
