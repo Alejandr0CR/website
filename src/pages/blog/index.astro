@@ -21,7 +21,7 @@ const cards: Card[] = [
     link: '/blog/laboratory',
   },
   {
-    title: 'Relatos 💪',
+    title: 'Relatos 📖',
     description: 'Anécdotas de mi vida e historias de ficción que he escrito.',
     link: '/blog/story',
   },
@@ -30,6 +30,11 @@ const cards: Card[] = [
     title: 'Reflexiones 💭',
     description: 'Opiniones y pensamientos sobre temas que me interesan.',
     link: '/blog/thought',
+  },
+  {
+    title: 'Teoría de fórmulas 🔮',
+    description: 'Metodología de mi autoría para optimizar el desarrollo personal.',
+    link: '/blog/formulas',
   },
 ];
 
@@ -74,12 +79,15 @@ const cards: Card[] = [
   border: unset;
 }
 .card, .card-body {
-  height: 10rem;
+  height: 12rem;
   overflow: hidden;
 }
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
-  transition: transform 0.3s ease-in-out;
+
+@media screen and (min-width: 768px) {
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
+    transition: transform 0.3s ease-in-out;
+  }
 }
 </style>
