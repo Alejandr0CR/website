@@ -364,12 +364,12 @@ venv/bin/pip3 install --upgrade pip
 </code> <ul data-astro-cid-oinsp4u5> <li data-astro-cid-oinsp4u5>Nótese que a partir de este punto <b data-astro-cid-oinsp4u5>debes usar los binarios del entorno virtual</b> y no los del sistema siempre que sea posible.</li> <li data-astro-cid-oinsp4u5>Es posible usar sólo el nombre del binario sin escribir la ruta relativa al "activar" el entorno virtual usando el comando <code data-astro-cid-oinsp4u5>source venv/bin/activate</code></li> </ul> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
 Instala las dependencias del proyecto usando el comando
 <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
-venv/bin/pip3 install -r djangoapp/requirements.txt
+venv/bin/pip3 install -r requirements.txt
 </code> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
 Instala las dependencias de ejecución usando el comando
 <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
-venv/bin/pip3 install gunicorn uvicorn[standard]
-</code> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
+venv/bin/pip3 install uvicorn[standard] gunicorn
+</code> <ul data-astro-cid-oinsp4u5> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>uvicorn</b> es un servidor web ASGI que será el intermediario entre Django y Nginx</li> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>gunicorn</b> es un servidor web HTTP con workers optimizados que uvicorn puede importar.</li> </ul> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
 Crea un archivo de configuración para gunicorn usando el comando
 <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
 vim gunicorn.conf.py
@@ -383,7 +383,7 @@ El contenido del archivo debe ser el siguiente:
               group = 'www-data'
 
               # unix domain socket
-              bind = 'unix:/var/run/djangoapp/app.sock'  # deshabilitar en pruebas
+              # bind = 'unix:/var/run/djangoapp/app.sock'  # deshabilitar en pruebas
               timeout = 500
 
               # processing
@@ -395,9 +395,9 @@ El contenido del archivo debe ser el siguiente:
               pythonpath = '/home/djangouser/djangoapp'
 
               # logging
-              accesslog = '/var/log/djangoapp/gunicorn_access.log' # deshabilitar en pruebas
-              errorlog = '/var/log/djangoapp/gunicorn_error.log' # deshabilitar en pruebas
-              loglevel = 'info'  # 'debug' en pruebas
+              # accesslog = '/var/log/djangoapp/gunicorn_access.log' # deshabilitar en pruebas
+              # errorlog = '/var/log/djangoapp/gunicorn_error.log' # deshabilitar en pruebas
+              loglevel = 'debug'  # 'debug' en pruebas
             </p>
           </pre> </li> </ol> <h2 class="h4 text-primary mb-4" data-astro-cid-oinsp4u5>
 Probemos el proyecto hasta ahora
