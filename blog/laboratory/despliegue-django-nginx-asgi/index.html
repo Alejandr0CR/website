@@ -345,7 +345,7 @@ passwd djangouser
 A continuación, el sistema te pedirá que ingreses la contraseña dos veces.
 </li> </ol> <h2 class="h4 text-primary mb-4" data-astro-cid-oinsp4u5>
 Instalar aplicación y configurar directorios
-</h2> <ol class="d-block text-justify fs-5 px-md-5 mb-5" data-astro-cid-oinsp4u5> <li class="mb-5" data-astro-cid-oinsp4u5>Iniciar sesión como el usuario <b data-astro-cid-oinsp4u5>djangouser</b> en el servidor.</li> <li class="mb-5" data-astro-cid-oinsp4u5>
+</h2> <ol class="d-block text-justify fs-5 px-md-5 mb-5" data-astro-cid-oinsp4u5> <li class="mb-5" data-astro-cid-oinsp4u5>Inicia sesión como el usuario <b data-astro-cid-oinsp4u5>djangouser</b> en el servidor.</li> <li class="mb-5" data-astro-cid-oinsp4u5>
 Descarga el proyecto usando el comando
 <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
 git clone https://example.com/djangoapp.git
@@ -401,12 +401,23 @@ El contenido del archivo debe ser el siguiente:
             </p>
           </pre> </li> </ol> <h2 class="h4 text-primary mb-4" data-astro-cid-oinsp4u5>
 Probemos el proyecto hasta ahora
-</h2> <ol class="d-block text-justify fs-5 px-md-5 mb-5" data-astro-cid-oinsp4u5> <li class="mb-5" data-astro-cid-oinsp4u5>
+</h2>
 Inicia el proyecto usando el siguiente comando
+             --print-config djangoapp.asgi:application
+<ol class="d-block text-justify fs-5 px-md-5 mb-5" data-astro-cid-oinsp4u5> <li class="mb-5" data-astro-cid-oinsp4u5>
+Comprueba la configuración de gunicorn usando el comando
 <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
-venv/bin/python3 -m gunicorn -c gunicorn.conf.py --check-config --print-config djangoapp.asgi:application
-</code> <ul data-astro-cid-oinsp4u5> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>-c gunicorn.conf.py</b> es una opción para indicar el archivo de configuración de gunicorn.</li> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>--check-config</b> es una opción para comprobar la configuración de gunicorn antes de iniciar la aplicación.</li> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>--print-config</b> es una opción para mostrar la configuración de gunicorn antes de iniciar la aplicación.</li> <li data-astro-cid-oinsp4u5><b data-astro-cid-oinsp4u5>djangoapp.asgi:application</b> es el módulo (archivo) y la aplicación (python) que se ejecutará.</li> </ul> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
-Accede a la IP del servidor en el puerto 8000 usando un navegador web
+venv/bin/python3 -m gunicorn -c gunicorn.conf.py --check-config djangoapp.asgi:application
+</code> <ul data-astro-cid-oinsp4u5> <li data-astro-cid-oinsp4u5>Si la configuración es correcta, el comando no mostrará ningún mensaje.</li> </ul> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
+Verifica la configuración que está tomando el gunicorn con el comando
+<code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
+venv/bin/python3 -m gunicorn -c gunicorn.conf.py --print-config djangoapp.asgi:application
+</code> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
+Inicia el proyecto usando el comando
+<code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start" data-astro-cid-oinsp4u5>
+venv/bin/python3 -m gunicorn -c gunicorn.conf.py djangoapp.asgi:application
+</code> </li> <li class="mb-5" data-astro-cid-oinsp4u5>
+Accede a la IP del servidor de pruebas provisto por el uvicorn usando un navegador web
 </li> </ol> </section> </main> <div class="d-block py-6 py-md-5">&nbsp;</div> <footer class="position-absolute bottom-0 w-100"> <div class="container bg-black text-light py-3 rounded-top-3"> <nav> <div class="text-center mb-3"> <a class="d-block d-md-inline me-md-4 py-2" href="https://github.com/virtualitems" target="_blank">
 Github <i class="fab fa-github"></i> </a> <a class="d-block d-md-inline me-md-4 py-2" href="https://www.linkedin.com/in/alejandro-carrasco-rodr%C3%ADguez-a06a37175/" target="_blank">
 Linkedin <i class="fab fa-linkedin"></i> </a> </div> </nav> <div class="py-2"> <p class="text-center m-0">© 2024 Alejandro Carrasco Rodríguez</p> </div> </div> </footer>  <script src="/popper/popper.min.js"></script> <script src="/bootstrap5/bootstrap.min.js"></script> <script src="/fontawesome/all.min.js"></script> </body> </html> 
