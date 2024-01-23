@@ -448,14 +448,18 @@ sudo systemctl status djangoapp.service
         <li class="mb-5">
           Instala las dependencias del proyecto usando el comando
           <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
-            venv/bin/pip3 install -r djangoapp/requirements.txt
+            venv/bin/pip3 install -r requirements.txt
           </code>
         </li>
         <li class="mb-5">
           Instala las dependencias de ejecución usando el comando
           <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
-            venv/bin/pip3 install gunicorn uvicorn[standard]
+            venv/bin/pip3 install uvicorn[standard] gunicorn
           </code>
+          <ul>
+            <li><b>uvicorn</b> es un servidor web ASGI que será el intermediario entre Django y Nginx</li>
+            <li><b>gunicorn</b> es un servidor web HTTP con workers optimizados que uvicorn puede importar.</li>
+          </ul>
         </li>
         <li class="mb-5">
           Crea un archivo de configuración para gunicorn usando el comando
@@ -477,7 +481,7 @@ sudo systemctl status djangoapp.service
               group = 'www-data'
 
               # unix domain socket
-              bind = 'unix:/var/run/djangoapp/app.sock'  # deshabilitar en pruebas
+              # bind = 'unix:/var/run/djangoapp/app.sock'  # deshabilitar en pruebas
               timeout = 500
 
               # processing
@@ -489,9 +493,9 @@ sudo systemctl status djangoapp.service
               pythonpath = '/home/djangouser/djangoapp'
 
               # logging
-              accesslog = '/var/log/djangoapp/gunicorn_access.log' # deshabilitar en pruebas
-              errorlog = '/var/log/djangoapp/gunicorn_error.log' # deshabilitar en pruebas
-              loglevel = 'info'  # 'debug' en pruebas
+              # accesslog = '/var/log/djangoapp/gunicorn_access.log' # deshabilitar en pruebas
+              # errorlog = '/var/log/djangoapp/gunicorn_error.log' # deshabilitar en pruebas
+              loglevel = 'debug'  # 'debug' en pruebas
             </p>
           </pre>
         </li>
