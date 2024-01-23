@@ -407,7 +407,7 @@ sudo systemctl status djangoapp.service
       </h2>
 
       <ol class="d-block text-justify fs-5 px-md-5 mb-5">
-        <li class="mb-5">Iniciar sesión como el usuario <b>djangouser</b> en el servidor.</li>
+        <li class="mb-5">Inicia sesión como el usuario <b>djangouser</b> en el servidor.</li>
         <li class="mb-5">
           Descarga el proyecto usando el comando
           <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
@@ -505,21 +505,35 @@ sudo systemctl status djangoapp.service
         Probemos el proyecto hasta ahora
       </h2>
 
+      Inicia el proyecto usando el siguiente comando
+             --print-config djangoapp.asgi:application
       <ol class="d-block text-justify fs-5 px-md-5 mb-5">
+
         <li class="mb-5">
-          Inicia el proyecto usando el siguiente comando
+          Comprueba la configuración de gunicorn usando el comando
           <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
-            venv/bin/python3 -m gunicorn -c gunicorn.conf.py --check-config --print-config djangoapp.asgi:application
+            venv/bin/python3 -m gunicorn -c gunicorn.conf.py --check-config djangoapp.asgi:application
           </code>
           <ul>
-            <li><b>-c gunicorn.conf.py</b> es una opción para indicar el archivo de configuración de gunicorn.</li>
-            <li><b>--check-config</b> es una opción para comprobar la configuración de gunicorn antes de iniciar la aplicación.</li>
-            <li><b>--print-config</b> es una opción para mostrar la configuración de gunicorn antes de iniciar la aplicación.</li>
-            <li><b>djangoapp.asgi:application</b> es el módulo (archivo) y la aplicación (python) que se ejecutará.</li>
+            <li>Si la configuración es correcta, el comando no mostrará ningún mensaje.</li>
           </ul>
         </li>
+
         <li class="mb-5">
-          Accede a la IP del servidor en el puerto 8000 usando un navegador web
+          Verifica la configuración que está tomando el gunicorn con el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            venv/bin/python3 -m gunicorn -c gunicorn.conf.py --print-config djangoapp.asgi:application
+          </code>
+        </li>
+
+        <li class="mb-5">
+          Inicia el proyecto usando el comando
+          <code class="d-block bg-dark text-white rounded-2 my-1 p-2 text-start">
+            venv/bin/python3 -m gunicorn -c gunicorn.conf.py djangoapp.asgi:application
+          </code>
+        </li>
+        <li class="mb-5">
+          Accede a la IP del servidor de pruebas provisto por el uvicorn usando un navegador web
         </li>
       </ol>
 
