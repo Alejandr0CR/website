@@ -17,11 +17,11 @@ const card = post.card;
 const image = post.image;
 
 ---
-<a class="w-100 w-md-100" href=`/blog/${post.category}/${post.slug}`>
+<a class="w-100 w-lg-100" href=`/blog/${post.category}/${post.slug}`>
   <div class="card w-100">
     <img src=`${image?.url}` height="150px" class="card-img-top" alt=`${image?.alt}`>
     <div class="card-body">
-      <h5 class="card-title text-primary text-center text-md-start">{post.title}</h5>
+      <h5 class="card-title text-primary text-center text-lg-start">{post.title}</h5>
     </div>
   </div>
 </a>

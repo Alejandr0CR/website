@@ -17,9 +17,9 @@ import NavBarTop from "../components/NavBarTop.astro";
 
   <main class="container mb-5">
     <section class="bg-light text-dark rounded-4 mb-5">
-      <div class="px-3 py-3 px-md-5 py-md-5">
+      <div class="px-3 py-3 px-lg-5 py-lg-5">
         <div class="row">
-          <div class="col-md-5 mb-4 mb-md-0 text-center">
+          <div class="col-lg-5 mb-4 mb-lg-0 text-center">
             <img
               src="https://picsum.photos/800"
               alt="Alejandro Carrasco Rodríguez"
@@ -27,8 +27,8 @@ import NavBarTop from "../components/NavBarTop.astro";
               style="max-height: 22rem;"
             />
           </div>
-          <div class="col-md-7">
-            <h2 class="text-primary mb-4 text-center text-md-start">
+          <div class="col-lg-7">
+            <h2 class="text-primary mb-4 text-center text-lg-start">
               ¡Bienvenidos a la era digital!
             </h2>
             <p class="d-block text-justify">
@@ -62,7 +62,7 @@ import NavBarTop from "../components/NavBarTop.astro";
             <i class="fa-solid fa-external-link"></i>
           </a>
 
-          <br class="d-block d-md-none" />
+          <br class="d-block d-lg-none" />
 
           para el proyecto de
 
@@ -77,7 +77,7 @@ import NavBarTop from "../components/NavBarTop.astro";
 
     <section class="bg-light text-dark rounded-4 mb-5 p-5">
       <div class="mb-5">
-        <h2 class="text-primary text-center text-md-start mb-3">
+        <h2 class="text-primary text-center text-lg-start mb-3">
           Analista y Desarrollador de Software
         </h2>
         <p class="d-block mb-3">
@@ -105,7 +105,7 @@ import NavBarTop from "../components/NavBarTop.astro";
               { title: "Residencia", value: "Colombia" },
               { title: "Idiomas", value: "Español, English" },
             ].map(({ title, value }) => (
-              <div class="col-12 mb-3 col-md-6 mb-md-2">
+              <div class="col-12 mb-3 col-lg-6 mb-lg-2">
                 <i class="fa-solid fa-chevron-right" />
                 <strong>{title}:</strong>
                 <span set:html={value} />
@@ -129,7 +129,7 @@ import NavBarTop from "../components/NavBarTop.astro";
             "Arquitectura de software en capas",
             "Arquitectura de software hexagonal",
           ].map((skill) => (
-            <div class="col-12 mb-3 col-md-6 mb-md-2">
+            <div class="col-12 mb-3 col-lg-6 mb-lg-2">
               <i class="fa-regular fa-circle-check" />
               <strong>{skill}</strong>
             </div>
@@ -164,7 +164,7 @@ import NavBarTop from "../components/NavBarTop.astro";
             "Docker",
             "Amazon Web Services (AWS)",
           ].map((skill) => (
-            <div class="col-12 mb-3 col-md-4 mb-md-2">
+            <div class="col-12 mb-3 col-lg-4 mb-lg-2">
               <i class="fa-regular fa-circle-check" />
               <strong>{skill}</strong>
             </div>
@@ -187,9 +187,9 @@ import NavBarTop from "../components/NavBarTop.astro";
     </section>
 
     <section class="resume no-selectable bg-light text-dark rounded-4 mb-5">
-      <div class="px-3 py-3 px-md-5 py-md-5">
+      <div class="px-3 py-3 px-lg-5 py-lg-5">
         <div class="mb-4">
-          <h2 class="text-primary text-center text-md-start">
+          <h2 class="text-primary text-center text-lg-start">
             Trabajos realizados
           </h2>
         </div>

@@ -10,12 +10,12 @@ const post = Astro.props.post;
 const image = post.image;
 
 ---
-<a class="d-inline-block h-100 w-100 w-md-100" href=`/blog/${post.category}/${post.slug}`>
-  <div class="card w-100 flex-md-row">
+<a class="d-inline-block h-100 w-100 w-lg-100" href=`/blog/${post.category}/${post.slug}`>
+  <div class="card w-100 flex-lg-row">
     <img src=`${image?.url}` height="250rem" class="card-img-top" alt=`${image?.alt}`>
     <div class="card-body">
-      <h5 class="card-title text-primary text-center text-md-start">{post.title}</h5>
-      <p class="d-md-block card-text">{post.summary}</p>
+      <h5 class="card-title text-primary text-center text-lg-start">{post.title}</h5>
+      <p class="d-lg-block card-text">{post.summary}</p>
     </div>
   </div>
 </a>
