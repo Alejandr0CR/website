@@ -479,32 +479,9 @@ sudo systemctl status djangoapp.service
           <span class="h5 mb-4">
             El contenido del archivo debe ser el siguiente:
           </span>
-          <pre class="bg-dark text-white rounded-2 my-1 p-2" style="white-space: pre-line;">
-            <p>
-              from multiprocessing import cpu_count
-
-              # as user
-              user = 'djangouser'
-              group = 'www-data'
-
-              # unix domain socket
-              # bind = 'unix:/var/run/djangoapp/app.sock'  # deshabilitar en pruebas
-              timeout = 500
-
-              # processing
-              worker_class = 'uvicorn.workers.UvicornWorker'
-              workers = cpu_count() * 2
-
-              # paths
-              chdir = '/home/djangouser/djangoapp'
-              pythonpath = '/home/djangouser/djangoapp'
-
-              # logging
-              # accesslog = '/var/log/djangoapp/gunicorn_access.log' # deshabilitar en pruebas
-              # errorlog = '/var/log/djangoapp/gunicorn_error.log' # deshabilitar en pruebas
-              loglevel = 'debug'  # 'debug' en pruebas
-            </p>
-          </pre>
+          <div>
+            <iframe frameborder="0" scrolling="no" style="width:100%; height:475px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fvirtualitems%2Fdjangoapp%2Fblob%2Fstage1%2Fgunicorn.conf.py&style=dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></iframe>
+          </div>
         </li>
       </ol>
 
