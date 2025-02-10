@@ -56,11 +56,20 @@ li {
 }
 
 .reader {
+  width: 100%;
+}
+
+.title-bar {
   width: 90%;
 }
 
 @media (width >=48rem) {
   .reader {
+    width: calc(680px + 80px);
+    padding: 0 40px;
+  }
+
+  .title-bar {
     width: 680px;
   }
 }
