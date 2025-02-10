@@ -10,19 +10,22 @@ Extra extra large ... ≥1400px
 
 html,
 body {
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
 }
 
 body {
   display: block;
   position: relative;
+  margin: 0;
   background: linear-gradient(to bottom right, var(--color-cyan-300), var(--color-blue-900));
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: sans-serif;
+  min-height: 100vh;
+  min-width: 100%;
   line-height: 1.5;
+  font-family: sans-serif;
 }
 
 a,

@@ -4,24 +4,41 @@ interface Props {
 }
 
 // const {  } = Astro.props;
-
+const year = new Date().getFullYear();
 ---
+
 <div class="d-block py-6 py-lg-5">&nbsp;</div>
 
-<footer class="position-absolute bottom-0 w-100">
-  <div class="container bg-black text-light py-3 rounded-top-3">
+<footer class="bottom-0 position-absolute w-100">
+  <div
+    class="relative bg-black mx-auto py-3 rounded-top-3 text-light container"
+  >
     <nav>
-      <div class="text-center mb-3">
-        <a class="d-block d-lg-inline me-lg-4 py-2" href="https://github.com/virtualitems" target="_blank">
+      <div class="mb-3 text-center">
+        <a
+          class="d-block d-lg-inline me-lg-4 py-2"
+          href="https://github.com/virtualitems"
+          target="_blank"
+        >
           Github <i class="fab fa-github"></i>
         </a>
-        <a class="d-block d-lg-inline me-lg-4 py-2" href="https://www.linkedin.com/in/alejandro-carrasco-rodr%C3%ADguez-a06a37175/" target="_blank">
+        <a
+          class="d-block d-lg-inline me-lg-4 py-2"
+          href="https://www.linkedin.com/in/alejandro-carrasco-rodr%C3%ADguez-a06a37175/"
+          target="_blank"
+        >
           Linkedin <i class="fab fa-linkedin"></i>
         </a>
       </div>
     </nav>
     <div class="py-2">
-      <p class="text-center m-0">© 2024 Alejandro Carrasco Rodríguez</p>
+      <p class="m-0 text-center">© {year} Alejandro Carrasco Rodríguez</p>
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-width {
+    width: 85%;
+  }
+</style>
