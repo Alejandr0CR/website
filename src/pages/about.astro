@@ -50,8 +50,10 @@ import NavBarTop from "../components/NavBarTop.astro";
                 </b>
               </p>
               <p class="d-block text-justify">
-                <b>Me apasiona la tecnología y el desarrollo del talento humano</b>, por lo que
-                encontrarás mucho más que contenido técnico en mi sitio.
+                <b
+                  >Me apasiona la tecnología y el desarrollo del talento humano</b
+                >, por lo que encontrarás mucho más que contenido técnico en mi
+                sitio.
               </p>
             </div>
           </div>
@@ -196,46 +198,50 @@ import NavBarTop from "../components/NavBarTop.astro";
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <h3 class="resume-title">Labor en Empresas</h3>
               <div class="resume-item">
-                <h4>Desarrollador de software en Deltec</h4>
-                <h5>Feb. 2022 - Actualidad</h5>
+                <h4>Líder de equipo de ingeniería de sistemas</h4>
+                <h5>Feb. 2022 - Mar. 2024</h5>
                 <ul>
                   <li class="text-justify">
-                    Desarrollar las funcionalidades requeridas para la
-                    plataforma de ordenes de servicio que utilizan las empresas
-                    públicas para gestionar a los técnicos en terreno.
+                    Lideré la sistematización y automatización de procesos para
+                    clientes operativos del sector de servicios públicos.
                   </li>
                   <li class="text-justify">
-                    Desarrollar las funcionalidades requeridas para la
-                    plataforma de gestión interna de la empresa.
+                    Creé el sistema de geolocalización y reportes de
+                    posicionamiento en tiempo real para el seguimiento del
+                    personal en campo.
                   </li>
                   <li class="text-justify">
-                    Realizar pruebas unitarias para asegurar la calidad del
-                    software.
+                    Automaticé la gestión del control de versiones y la
+                    configuración de los ambientes de pruebas. Creé el estándar
+                    de documentación para toda el área de tecnología.
                   </li>
                   <li class="text-justify">
-                    Coordinar el despliegue de las versiones de la plataforma y
-                    las aplicaciones a producción.
+                    Coordiné el despliegue de las versiones de la plataforma a
+                    producción.
                   </li>
                 </ul>
               </div>
               <div class="resume-item">
-                <h4>Desarrollador de software en Eventech</h4>
+                <h4>Líder de equipo de software e innovación en Eventech</h4>
                 <h5>Oct. 2020 - Ene. 2022</h5>
                 <ul>
                   <li class="text-justify">
-                    Crear nuevas experiencias de usuario para la plataforma de
-                    eventos virtuales. Y desarrollar las funcionalidades que
-                    permitan estas experiencias.
+                    Lideré la innovación y el desarrollo de funciones de
+                    experiencia de usuario para las plataformas de eventos
+                    virtuales de la empresa.
+                  </li>
+                  <li>
+                    Creé un núcleo de código que redujo el tiempo de desarrollo
+                    de plataformas de eventos virtuales en un 30%
                   </li>
                   <li class="text-justify">
-                    Gestionar las bases de datos de usuarios y patrocinadores.
-                    Generar informes de estado para la inteligencia del negocio
-                    y los resultados de los eventos.
+                    Gestioné las bases de datos de usuarios y patrocinadores y
+                    diseñé informes de estado para proporcionar inteligencia de
+                    negocios a la empresa.
                   </li>
                   <li class="text-justify">
-                    Administrar los servidores de la compañía, realizar las
-                    migraciones y preparaciones necesarias en caso de cambio de
-                    servidores y dar soporte a los usuarios.
+                    Administré los servidores de la compañía y realicé las
+                    operaciones necesarias en casos de migración de servidores.
                   </li>
                 </ul>
               </div>
@@ -243,18 +249,10 @@ import NavBarTop from "../components/NavBarTop.astro";
                 <h4>Desarrollador de software en Jikkosoft</h4>
                 <h5>Oct. 2019 - Feb. 2020</h5>
                 <ul>
-                  <li class="text-justify">
-                    Desarrollar las funcionalidades requeridas para la
-                    plataforma de facturación de impuestos del alumbrado
-                    público.
-                  </li>
-                  <li class="text-justify">
-                    Realizar consultas eficientes en grandes bases de datos para
-                    obtener la información requerida en el menor tiempo posible.
-                  </li>
-                  <li class="text-justify">
-                    Realizar las pruebas unitarias y de integración para
-                    asegurar la calidad del software.
+                  <li>
+                    Creé los algoritmos para el cálculo de impuestos de
+                    alumbrado público a nivel regional y el sistema de
+                    facturación.
                   </li>
                 </ul>
               </div>
@@ -267,10 +265,10 @@ import NavBarTop from "../components/NavBarTop.astro";
                 <h5>2020 - 2021</h5>
                 <p><em>Para la Fundación HRBC</em></p>
                 <p class="text-justify">
-                  Se puso en línea la plataforma educativa de HRBC para dictar
-                  el Diplomado de Educación Inclusiva. La plataforma permite a
-                  los docentes gestionar el contenido de las clases, los
-                  exámenes, talleres, foros y las notas de los estudiantes.
+                  Puse en línea la plataforma educativa de HRBC para dictar el
+                  Diplomado de Educación Inclusiva. La plataforma permite a los
+                  docentes gestionar el contenido de las clases, los exámenes,
+                  talleres, foros y las notas de los estudiantes.
                 </p>
               </div>
             </div>
@@ -281,64 +279,64 @@ import NavBarTop from "../components/NavBarTop.astro";
   </div>
 
   <Footer />
+
+  <style>
+    .resume .resume-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color: #050d18;
+    }
+
+    .resume .resume-item {
+      padding: 0 0 20px 20px;
+      margin-top: -2px;
+      border-left: 2px solid #1f5297;
+      position: relative;
+    }
+
+    .resume .resume-item h4 {
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-family: "Poppins", sans-serif;
+      color: #050d18;
+      margin-bottom: 10px;
+    }
+
+    .resume .resume-item h5 {
+      font-size: 16px;
+      background: #e4edf9;
+      padding: 5px 15px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .resume .resume-item ul {
+      padding-left: 20px;
+    }
+
+    .resume .resume-item ul li {
+      padding-bottom: 10px;
+    }
+
+    .resume .resume-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .resume .resume-item::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+      left: -9px;
+      top: 0;
+      background: #fff;
+      border: 2px solid #1f5297;
+    }
+  </style>
 </Layout>
-
-<style>
-  .resume .resume-title {
-    font-size: 26px;
-    font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #050d18;
-  }
-
-  .resume .resume-item {
-    padding: 0 0 20px 20px;
-    margin-top: -2px;
-    border-left: 2px solid #1f5297;
-    position: relative;
-  }
-
-  .resume .resume-item h4 {
-    line-height: 18px;
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
-    color: #050d18;
-    margin-bottom: 10px;
-  }
-
-  .resume .resume-item h5 {
-    font-size: 16px;
-    background: #e4edf9;
-    padding: 5px 15px;
-    display: inline-block;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .resume .resume-item ul {
-    padding-left: 20px;
-  }
-
-  .resume .resume-item ul li {
-    padding-bottom: 10px;
-  }
-
-  .resume .resume-item:last-child {
-    padding-bottom: 0;
-  }
-
-  .resume .resume-item::before {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50px;
-    left: -9px;
-    top: 0;
-    background: #fff;
-    border: 2px solid #1f5297;
-  }
-</style>
