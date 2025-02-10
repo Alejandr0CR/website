@@ -1,5 +1,5 @@
 ---
-import { Post } from '../models/posts';
+import { Post } from "../models/posts";
 
 interface Props {
   post: Post;
@@ -8,34 +8,45 @@ interface Props {
 const post = Astro.props.post;
 
 const image = post.image;
-
 ---
-<a class="d-inline-block h-100 w-100 w-lg-100" href=`/blog/${post.category}/${post.slug}`>
-  <div class="card w-100 flex-lg-row">
-    <img src=`${image?.url}` height="250rem" class="card-img-top" alt=`${image?.alt}`>
-    <div class="card-body">
-      <h5 class="card-title text-primary text-center text-lg-start">{post.title}</h5>
-      <p class="d-lg-block card-text">{post.summary}</p>
+
+<a class="block" href=`/blog/${post.category}/${post.slug}`>
+  <div class="relative d-flex flex-row bg-white rounded w-full expand-on-hover">
+    <img
+      src=`${image?.url}`
+      alt=`${image?.alt}`
+      width="40%"
+      class="d-inline-block0"
+      style="border-radius: 0.5rem 0 0 0.5rem;"
+    />
+    <div
+      class="d-flex px-3 py-2 w-60"
+      style="flex-direction: column; justify-content: center;"
+    >
+      <h2 class="text-primary post-title">{post.title}</h2>
+      <p class="d-sm-block d-none post-summary">{post.summary}</p>
     </div>
   </div>
 </a>
 
 <style>
-@media screen and (min-width: 768px) {
-  .card {
-    border: unset;
-    height: 10rem;
+  .post-title {
+    font-size: 1rem;
   }
 
-  .card img {
-    height: 100%;
-    width: 40%;
-  }
+  @media screen and (min-width: 640px) {
+    .post-title {
+      font-size: large;
+    }
 
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
-    transition: transform 0.3s ease-in-out;
+    .post-summary {
+      font-size: small;
+    }
+
+    .expand-on-hover:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
+      transition: transform 0.3s ease-in-out;
+    }
   }
-}
 </style>

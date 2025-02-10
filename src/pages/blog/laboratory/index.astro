@@ -18,11 +18,11 @@ import postsList from "../../../data/laboratories";
       </section>
     </header>
 
-    <main class="container">
+    <main class="mb-4 container">
       <div class="w-100 row">
         {
           postsList.map((post) => (
-            <div class="mb-3 card-container col-12">
+            <div class="mb-3 card-container col-lg-6">
               <PostWideCard post={post} />
             </div>
           ))
