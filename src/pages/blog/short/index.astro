@@ -1,34 +1,38 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Footer from '../../../components/Footer.astro';
-import NavBarTop from '../../../components/NavBarTop.astro';
-import PostWideCard from '../../../components/PostWideCard.astro';
-import postsList from '../../../data/shorts';
-
-
+import Layout from "../../../layouts/Layout.astro";
+import Footer from "../../../components/Footer.astro";
+import NavBarTop from "../../../components/NavBarTop.astro";
+import PostWideCard from "../../../components/PostWideCard.astro";
+import postsList from "../../../data/shorts";
 ---
-<Layout theme="dark" title="Blog | Piezas de conocimiento | Alejandro Carrasco Rodríguez">
+
+<Layout
+  theme="dark"
+  title="Blog | Piezas de conocimiento | Alejandro Carrasco Rodríguez"
+>
   <NavBarTop theme="dark" active="blog" />
 
-  <header class="container mb-4">
-    <section class="no-selectable bg-black text-light rounded-4">
-			<div class="py-3">
-				<h1 class="h4 d-block text-center">Piezas de conocimiento</h1>
-			</div>
-		</section>
-  </header>
+  <div class="pt-3">
+    <header class="mb-4 container">
+      <section class="no-selectable bg-black rounded-4 text-light">
+        <div class="py-3">
+          <h1 class="d-block text-center h4">Piezas de conocimiento</h1>
+        </div>
+      </section>
+    </header>
 
-  <main class="container">
-    <div class="row w-100">
-      {
-        postsList.map((post) => (
-          <div class="card-container col-12 mb-3">
-            <PostWideCard post={post} />
-          </div>
-        ))
-      }
-    </div>
-  </main>
+    <main class="container">
+      <div class="w-100 row">
+        {
+          postsList.map((post) => (
+            <div class="mb-3 card-container col-12">
+              <PostWideCard post={post} />
+            </div>
+          ))
+        }
+      </div>
+    </main>
+  </div>
 
   <Footer />
 </Layout>

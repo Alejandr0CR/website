@@ -7,7 +7,6 @@ import postsList from "../../../data/laboratories";
 const post = postsList.find(
   (post) => post.slug === "despliegue-django-nginx-asgi",
 );
-
 ---
 
 <Layout
@@ -15,17 +14,6 @@ const post = postsList.find(
   title=`${post?.title} | Laboratorio | Alejandro Carrasco Rodríguez`
 >
   <NavBarTop theme="dark" active="blog" />
-
-  <style>
-    .reader {
-      width: 90%;
-    }
-    @media (width >= 48rem) {
-      .reader {
-        width: 680px;
-      }
-    }
-  </style>
 
   <div class="pt-3">
     <header class="mx-auto mb-3 reader">

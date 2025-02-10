@@ -7,338 +7,350 @@ import NavBarTop from "../components/NavBarTop.astro";
 <Layout theme="dark" title="Acerca de mí | Alejandro Carrasco Rodríguez">
   <NavBarTop theme="dark" active="about" />
 
-  <header class="container mb-5">
-    <section class="no-selectable bg-black text-light rounded-4">
-      <div class="py-3">
-        <h1 class="h4 d-block text-center">Acerca de mí</h1>
-      </div>
-    </section>
-  </header>
-
-  <main class="container mb-5">
-    <section class="bg-light text-dark rounded-4 mb-5">
-      <div class="px-3 py-3 px-lg-5 py-lg-5">
-        <div class="row">
-          <div class="col-lg-5 mb-4 mb-lg-0 text-center">
-            <img
-              src="/images/me.jpg"
-              alt="Alejandro Carrasco Rodríguez"
-              class="img-fluid rounded-4"
-              style="max-height: 22rem;"
-            />
-          </div>
-          <div class="col-lg-7">
-            <h2 class="text-primary mb-4 text-center text-lg-start">
-              ¡Bienvenidos a la era digital!
-            </h2>
-            <p class="d-block text-justify">
-              En nuestro mundo hiperconectado, los protagonistas son quienes
-              entienden cómo funciona la tecnología de la que tanto dependemos.
-              <b>Mi nombre es Alejandro y soy Ingeniero en Sistemas.</b>
-              Me gusta crear soluciones a problemas complejos y técnicamente desafiantes,
-              por lo que siempre estoy dispuesto a aprender y enfrentar nuevos retos.
-              <b
-                >Tengo como propósito contribuír de manera significativa a la
-                sociedad, a través de la tecnología, para mejorar la calidad de
-                vida de las personas.</b
-              >
-            </p>
-            <p class="d-block text-justify">
-              <b>Me apasiona la tecnología y las historias</b>, por lo que
-              encontrarás mucho más que contenido técnico en mi sitio.
-            </p>
-          </div>
+  <div class="pt-3">
+    <header class="mb-5 container">
+      <section class="no-selectable bg-black rounded-4 text-light">
+        <div class="py-3">
+          <h1 class="d-block text-center h4">Acerca de mí</h1>
         </div>
-      </div>
-    </section>
+      </section>
+    </header>
 
-    <section class="alert alert-info rounded-3 mb-5 px-5 py-3">
-      <div class="text-center mb-3">
-        <h2 class="d-inline-block h6 text-black shado">
-          Actualmente trabajando en
-
-          <a class="text-primary" href="https://deltec.com.co/" target="_blank" rel="noopener noreferrer">
-            Deltec
-            <i class="fa-solid fa-external-link"></i>
-          </a>
-
-          <br class="d-block d-lg-none" />
-
-          para el proyecto de
-
-          <a class="text-primary" href="https://seotenterprise.net/" target="_blank" rel="noopener noreferrer">
-            Sistema de Ejecución de Ordenes de Trabajo
-            <i class="fa-solid fa-external-link"></i>
-          </a>
-
-        </h2>
-      </div>
-    </section>
-
-    <section class="bg-light text-dark rounded-4 mb-5 p-5">
-      <div class="mb-5">
-        <h2 class="text-primary text-center text-lg-start mb-3">
-          Analista y Desarrollador de Software
-        </h2>
-        <p class="d-block mb-3">
-          <b>Mi objetivo</b> es ser <b>Arquitecto de Soluciones</b>, por lo que
-          estoy enfocado en dominar
-          <b>las mejores prácticas en análisis, desarrollo y despliegue</b> de sistemas
-          informáticos.
-        </p>
-        <p class="d-block fst-italic mb-3">
-          Crear un sistema no es como construír un edificio y ya está, es más
-          como plantar un jardín.
-          <br />Es algo que se debe cuidar y mantener, por eso <b
-            >¡haz el código legible!</b
-          >
-        </p>
-        <div class="row mb-3">
-          {
-            [
-              { title: "Natalicio", value: "24 Octubre 1996 (Generación Y)" },
-              {
-                title: "Correo",
-                value:
-                  'contacto@alejandrocr.co <a href="mailto:contacto@alejandrocr.co"><i class="fa-solid fa-envelope"></i></a>',
-              },
-              { title: "Residencia", value: "Colombia" },
-              { title: "Idiomas", value: "Español, English" },
-            ].map(({ title, value }) => (
-              <div class="col-12 mb-3 col-lg-6 mb-lg-2">
-                <i class="fa-solid fa-chevron-right" />
-                <strong>{title}:</strong>
-                <span set:html={value} />
-              </div>
-            ))
-          }
-        </div>
-      </div>
-
-      <div class="row mb-5">
-        <h3 class="text-primary mb-3">
-          Mis habilidades de gestión de proyectos
-        </h3>
-        {
-          [
-            "Especificación de requerimientos de software (SRS)",
-            "Documentación de software",
-            "Diagramas UML",
-            "Metodologías ágiles (Scrum)",
-            "Desarrollo guiado por pruebas (TDD)",
-            "Arquitectura de software en capas",
-            "Arquitectura de software hexagonal",
-          ].map((skill) => (
-            <div class="col-12 mb-3 col-lg-6 mb-lg-2">
-              <i class="fa-regular fa-circle-check" />
-              <strong>{skill}</strong>
+    <main class="mb-5 container">
+      <section class="bg-light mb-5 rounded-4 text-dark">
+        <div class="px-3 px-lg-5 py-3 py-lg-5">
+          <div class="row">
+            <div class="mb-4 mb-lg-0 text-center col-lg-5">
+              <img
+                src="/images/me.jpg"
+                alt="Alejandro Carrasco Rodríguez"
+                class="rounded-4 img-fluid"
+                style="max-height: 22rem;"
+              />
             </div>
-          ))
-        }
-      </div>
-
-      <div class="row mb-5">
-        <h3 class="text-primary mb-3">Mis habilidades técnicas</h3>
-        {
-          [
-            "Linux (Desktop & Server)",
-            "Git (GitHub & GitLab)",
-            "Python",
-            "Fastapi",
-            "Django (wsgi & asgi)",
-            "Javascript",
-            "Node JS",
-            "Typescript",
-            "React JS",
-            "Mapbox (realtime maps)",
-            "Semantic HTML5",
-            "Responsive and animated CSS3",
-            "Postgresql",
-            "Mysql",
-            "Mongodb",
-            "Redis",
-            "Nginx",
-            "Rest API",
-            "Websockets",
-            "Domain names (DNS records)",
-            "Docker",
-            "Amazon Web Services (AWS)",
-          ].map((skill) => (
-            <div class="col-12 mb-3 col-lg-4 mb-lg-2">
-              <i class="fa-regular fa-circle-check" />
-              <strong>{skill}</strong>
-            </div>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="alert alert-success rounded-3 mb-5 px-5 py-3">
-      <a class="fs-5" href="/docs/cv.alejandrocr.co_240117.pdf" download>
-        <div class="text-center mb-3">
-          Click
-          <span class="text-primary">
-            aquí
-          </span>
-          para descargar mi Currículum Vitae
-          <i class="fa-solid fa-download"></i>
-        </div>
-      </a>
-    </section>
-
-    <section class="resume no-selectable bg-light text-dark rounded-4 mb-5">
-      <div class="px-3 py-3 px-lg-5 py-lg-5">
-        <div class="mb-4">
-          <h2 class="text-primary text-center text-lg-start">
-            Trabajos realizados
-          </h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Labor en Empresas</h3>
-            <div class="resume-item">
-              <h4>Desarrollador de software en Deltec</h4>
-              <h5>Feb. 2022 - Actualidad</h5>
-              <ul>
-                <li class="text-justify">
-                  Desarrollar las funcionalidades requeridas para la plataforma
-                  de ordenes de servicio que utilizan las empresas públicas para
-                  gestionar a los técnicos en terreno.
-                </li>
-                <li class="text-justify">
-                  Desarrollar las funcionalidades requeridas para la plataforma
-                  de gestión interna de la empresa.
-                </li>
-                <li class="text-justify">
-                  Realizar pruebas unitarias para asegurar la calidad del
-                  software.
-                </li>
-                <li class="text-justify">
-                  Coordinar el despliegue de las versiones de la plataforma y
-                  las aplicaciones a producción.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Desarrollador de software en Eventech</h4>
-              <h5>Oct. 2020 - Ene. 2022</h5>
-              <ul>
-                <li class="text-justify">
-                  Crear nuevas experiencias de usuario para la plataforma de
-                  eventos virtuales. Y desarrollar las funcionalidades que
-                  permitan estas experiencias.
-                </li>
-                <li class="text-justify">
-                  Gestionar las bases de datos de usuarios y patrocinadores.
-                  Generar informes de estado para la inteligencia del negocio y
-                  los resultados de los eventos.
-                </li>
-                <li class="text-justify">
-                  Administrar los servidores de la compañía, realizar las
-                  migraciones y preparaciones necesarias en caso de cambio de
-                  servidores y dar soporte a los usuarios.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Desarrollador de software en Jikkosoft</h4>
-              <h5>Oct. 2019 - Feb. 2020</h5>
-              <ul>
-                <li class="text-justify">
-                  Desarrollar las funcionalidades requeridas para la plataforma
-                  de facturación de impuestos del alumbrado público.
-                </li>
-                <li class="text-justify">
-                  Realizar consultas eficientes en grandes bases de datos para
-                  obtener la información requerida en el menor tiempo posible.
-                </li>
-                <li class="text-justify">
-                  Realizar las pruebas unitarias y de integración para asegurar
-                  la calidad del software.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Proyectos Freelance</h3>
-            <div class="resume-item">
-              <h4>Plataforma educativa</h4>
-              <h5>2020 - 2021</h5>
-              <p><em>Para la Fundación HRBC</em></p>
-              <p class="text-justify">
-                Se puso en línea la plataforma educativa de HRBC para dictar el
-                Diplomado de Educación Inclusiva. La plataforma permite a los
-                docentes gestionar el contenido de las clases, los exámenes,
-                talleres, foros y las notas de los estudiantes.
+            <div class="col-lg-7">
+              <h2 class="mb-4 text-primary text-lg-start text-center">
+                ¡Bienvenidos a la era digital!
+              </h2>
+              <p class="d-block text-justify">
+                En nuestro mundo hiperconectado, los protagonistas son quienes
+                entienden cómo funciona la tecnología de la que tanto
+                dependemos.
+                <b>Mi nombre es Alejandro y soy Ingeniero en Sistemas.</b>
+                Me gusta crear soluciones a problemas complejos y técnicamente desafiantes,
+                por lo que siempre estoy dispuesto a aprender y enfrentar nuevos
+                retos.
+                <b
+                  >Tengo como propósito contribuír de manera significativa a la
+                  sociedad, a través de la tecnología, para mejorar la calidad
+                  de vida de las personas.</b
+                >
+              </p>
+              <p class="d-block text-justify">
+                <b>Me apasiona la tecnología y las historias</b>, por lo que
+                encontrarás mucho más que contenido técnico en mi sitio.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+
+      <section class="mb-5 px-5 py-3 rounded-3 alert alert-info">
+        <div class="mb-3 text-center">
+          <h2 class="d-inline-block text-black h6 shado">
+            Actualmente trabajando en
+
+            <a
+              class="text-primary"
+              href="https://deltec.com.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Deltec
+              <i class="fa-solid fa-external-link"></i>
+            </a>
+
+            <br class="d-block d-lg-none" />
+
+            para el proyecto de
+
+            <a
+              class="text-primary"
+              href="https://seotenterprise.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sistema de Ejecución de Ordenes de Trabajo
+              <i class="fa-solid fa-external-link"></i>
+            </a>
+          </h2>
+        </div>
+      </section>
+
+      <section class="bg-light mb-5 p-5 rounded-4 text-dark">
+        <div class="mb-5">
+          <h2 class="mb-3 text-primary text-lg-start text-center">
+            Analista y Desarrollador de Software
+          </h2>
+          <p class="d-block mb-3">
+            <b>Mi objetivo</b> es ser <b>Arquitecto de Soluciones</b>, por lo
+            que estoy enfocado en dominar
+            <b>las mejores prácticas en análisis, desarrollo y despliegue</b> de
+            sistemas informáticos.
+          </p>
+          <p class="d-block mb-3 fst-italic">
+            Crear un sistema no es como construír un edificio y ya está, es más
+            como plantar un jardín.
+            <br />Es algo que se debe cuidar y mantener, por eso <b
+              >¡haz el código legible!</b
+            >
+          </p>
+          <div class="mb-3 row">
+            {
+              [
+                { title: "Natalicio", value: "24 Octubre 1996 (Generación Y)" },
+                {
+                  title: "Correo",
+                  value:
+                    'contacto@alejandrocr.co <a href="mailto:contacto@alejandrocr.co"><i class="fa-solid fa-envelope"></i></a>',
+                },
+                { title: "Residencia", value: "Colombia" },
+                { title: "Idiomas", value: "Español, English" },
+              ].map(({ title, value }) => (
+                <div class="mb-3 mb-lg-2 col-12 col-lg-6">
+                  <i class="fa-chevron-right fa-solid" />
+                  <strong>{title}:</strong>
+                  <span set:html={value} />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="mb-5 row">
+          <h3 class="mb-3 text-primary">
+            Mis habilidades de gestión de proyectos
+          </h3>
+          {
+            [
+              "Especificación de requerimientos de software (SRS)",
+              "Documentación de software",
+              "Diagramas UML",
+              "Metodologías ágiles (Scrum)",
+              "Desarrollo guiado por pruebas (TDD)",
+              "Arquitectura de software en capas",
+              "Arquitectura de software hexagonal",
+            ].map((skill) => (
+              <div class="mb-3 mb-lg-2 col-12 col-lg-6">
+                <i class="fa-regular fa-circle-check" />
+                <strong>{skill}</strong>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mb-5 row">
+          <h3 class="mb-3 text-primary">Mis habilidades técnicas</h3>
+          {
+            [
+              "Linux (Desktop & Server)",
+              "Git (GitHub & GitLab)",
+              "Python",
+              "Fastapi",
+              "Django (wsgi & asgi)",
+              "Javascript",
+              "Node JS",
+              "Typescript",
+              "React JS",
+              "Mapbox (realtime maps)",
+              "Semantic HTML5",
+              "Responsive and animated CSS3",
+              "Postgresql",
+              "Mysql",
+              "Mongodb",
+              "Redis",
+              "Nginx",
+              "Rest API",
+              "Websockets",
+              "Domain names (DNS records)",
+              "Docker",
+              "Amazon Web Services (AWS)",
+            ].map((skill) => (
+              <div class="mb-3 mb-lg-2 col-12 col-lg-4">
+                <i class="fa-regular fa-circle-check" />
+                <strong>{skill}</strong>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="mb-5 px-5 py-3 rounded-3 alert alert-success">
+        <a class="fs-5" href="/docs/cv.alejandrocr.co_240117.pdf" download>
+          <div class="mb-3 text-center">
+            Click
+            <span class="text-primary"> aquí </span>
+            para descargar mi Currículum Vitae
+            <i class="fa-solid fa-download"></i>
+          </div>
+        </a>
+      </section>
+
+      <section class="no-selectable bg-light mb-5 rounded-4 text-dark resume">
+        <div class="px-3 px-lg-5 py-3 py-lg-5">
+          <div class="mb-4">
+            <h2 class="text-primary text-lg-start text-center">
+              Trabajos realizados
+            </h2>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title">Labor en Empresas</h3>
+              <div class="resume-item">
+                <h4>Desarrollador de software en Deltec</h4>
+                <h5>Feb. 2022 - Actualidad</h5>
+                <ul>
+                  <li class="text-justify">
+                    Desarrollar las funcionalidades requeridas para la
+                    plataforma de ordenes de servicio que utilizan las empresas
+                    públicas para gestionar a los técnicos en terreno.
+                  </li>
+                  <li class="text-justify">
+                    Desarrollar las funcionalidades requeridas para la
+                    plataforma de gestión interna de la empresa.
+                  </li>
+                  <li class="text-justify">
+                    Realizar pruebas unitarias para asegurar la calidad del
+                    software.
+                  </li>
+                  <li class="text-justify">
+                    Coordinar el despliegue de las versiones de la plataforma y
+                    las aplicaciones a producción.
+                  </li>
+                </ul>
+              </div>
+              <div class="resume-item">
+                <h4>Desarrollador de software en Eventech</h4>
+                <h5>Oct. 2020 - Ene. 2022</h5>
+                <ul>
+                  <li class="text-justify">
+                    Crear nuevas experiencias de usuario para la plataforma de
+                    eventos virtuales. Y desarrollar las funcionalidades que
+                    permitan estas experiencias.
+                  </li>
+                  <li class="text-justify">
+                    Gestionar las bases de datos de usuarios y patrocinadores.
+                    Generar informes de estado para la inteligencia del negocio
+                    y los resultados de los eventos.
+                  </li>
+                  <li class="text-justify">
+                    Administrar los servidores de la compañía, realizar las
+                    migraciones y preparaciones necesarias en caso de cambio de
+                    servidores y dar soporte a los usuarios.
+                  </li>
+                </ul>
+              </div>
+              <div class="resume-item">
+                <h4>Desarrollador de software en Jikkosoft</h4>
+                <h5>Oct. 2019 - Feb. 2020</h5>
+                <ul>
+                  <li class="text-justify">
+                    Desarrollar las funcionalidades requeridas para la
+                    plataforma de facturación de impuestos del alumbrado
+                    público.
+                  </li>
+                  <li class="text-justify">
+                    Realizar consultas eficientes en grandes bases de datos para
+                    obtener la información requerida en el menor tiempo posible.
+                  </li>
+                  <li class="text-justify">
+                    Realizar las pruebas unitarias y de integración para
+                    asegurar la calidad del software.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up">
+              <h3 class="resume-title">Proyectos Freelance</h3>
+              <div class="resume-item">
+                <h4>Plataforma educativa</h4>
+                <h5>2020 - 2021</h5>
+                <p><em>Para la Fundación HRBC</em></p>
+                <p class="text-justify">
+                  Se puso en línea la plataforma educativa de HRBC para dictar
+                  el Diplomado de Educación Inclusiva. La plataforma permite a
+                  los docentes gestionar el contenido de las clases, los
+                  exámenes, talleres, foros y las notas de los estudiantes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <Footer />
 </Layout>
 
 <style>
-.resume .resume-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #050d18;
-}
+  .resume .resume-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18;
+  }
 
-.resume .resume-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid #1f5297;
-  position: relative;
-}
+  .resume .resume-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid #1f5297;
+    position: relative;
+  }
 
-.resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-  margin-bottom: 10px;
-}
+  .resume .resume-item h4 {
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    color: #050d18;
+    margin-bottom: 10px;
+  }
 
-.resume .resume-item h5 {
-  font-size: 16px;
-  background: #e4edf9;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+  .resume .resume-item h5 {
+    font-size: 16px;
+    background: #e4edf9;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
 
-.resume .resume-item ul {
-  padding-left: 20px;
-}
+  .resume .resume-item ul {
+    padding-left: 20px;
+  }
 
-.resume .resume-item ul li {
-  padding-bottom: 10px;
-}
+  .resume .resume-item ul li {
+    padding-bottom: 10px;
+  }
 
-.resume .resume-item:last-child {
-  padding-bottom: 0;
-}
+  .resume .resume-item:last-child {
+    padding-bottom: 0;
+  }
 
-.resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: #fff;
-  border: 2px solid #1f5297;
-}
+  .resume .resume-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: #fff;
+    border: 2px solid #1f5297;
+  }
 </style>

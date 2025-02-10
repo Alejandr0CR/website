@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Footer from '../../components/Footer.astro';
-import NavBarTop from '../../components/NavBarTop.astro';
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import NavBarTop from "../../components/NavBarTop.astro";
 
 interface Card {
   title: string;
@@ -11,83 +11,86 @@ interface Card {
 
 const cards: Card[] = [
   {
-    title: 'Conocimientos 🧠',
-    description: 'Apuntes sobre conceptos y herramientas que he aprendido.',
-    link: '/blog/short',
+    title: "Conocimientos 🧠",
+    description: "Apuntes sobre conceptos y herramientas que he aprendido.",
+    link: "/blog/short",
   },
   {
-    title: 'Laboratorios 💎',
-    description: 'Proyectos que ensamblan los conocimientos adquiridos en fórmulas útiles.',
-    link: '/blog/laboratory',
+    title: "Laboratorios 💎",
+    description:
+      "Proyectos que ensamblan los conocimientos adquiridos en fórmulas útiles.",
+    link: "/blog/laboratory",
   },
   {
-    title: 'Relatos 📖',
-    description: 'Anécdotas de mi vida e historias de ficción que he escrito.',
-    link: '/blog/story',
+    title: "Relatos 📖",
+    description: "Anécdotas de mi vida e historias de ficción que he escrito.",
+    link: "/blog/story",
   },
 
   {
-    title: 'Reflexiones 💭',
-    description: 'Opiniones y pensamientos sobre temas que me interesan.',
-    link: '/blog/thought',
+    title: "Reflexiones 💭",
+    description: "Opiniones y pensamientos sobre temas que me interesan.",
+    link: "/blog/thought",
   },
   {
-    title: 'Teoría de fórmulas 🔮',
-    description: 'Metodología de mi autoría para optimizar el desarrollo personal.',
-    link: '/blog/formulas',
+    title: "Teoría de fórmulas 🔮",
+    description:
+      "Metodología de mi autoría para optimizar el desarrollo personal.",
+    link: "/blog/formulas",
   },
 ];
-
 ---
+
 <Layout theme="dark" title="Blog | Alejandro Carrasco Rodríguez">
   <NavBarTop theme="dark" active="blog" />
 
-  <header class="container mb-4">
-    <section class="no-selectable bg-black text-light rounded-4">
-			<div class="py-3">
-				<h1 class="h4 d-block text-center">Blog</h1>
-			</div>
-		</section>
-  </header>
+  <div class="pt-3">
+    <header class="mb-4 container">
+      <section class="no-selectable bg-black rounded-4 text-light">
+        <div class="py-3">
+          <h1 class="d-block text-center h4">Blog</h1>
+        </div>
+      </section>
+    </header>
 
-  <main class="container mb-5">
-    <div class="row">
-      {
-        cards.map((card) => (
-          <div class="col-12 col-lg-4 g-3">
-            <a href={card.link}>
-              <div class="card card-container bg-black text-light">
-                <div class="card-body">
-                  <h2 class="h5">{card.title}</h2>
-                  <p class="card-text">
-                    {card.description}
-                  </p>
+    <main class="mb-5 container">
+      <div class="row">
+        {
+          cards.map((card) => (
+            <div class="col-12 col-lg-4 g-3">
+              <a href={card.link}>
+                <div class="bg-black text-light card card-container">
+                  <div class="card-body">
+                    <h2 class="h5">{card.title}</h2>
+                    <p class="card-text">{card.description}</p>
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
-        ))
-      }
-
-  </main>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </main>
+  </div>
 
   <Footer />
+
+  <style>
+    .card {
+      border: unset;
+    }
+    .card,
+    .card-body {
+      height: 10rem;
+      overflow: hidden;
+    }
+
+    @media screen and (min-width: 768px) {
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  </style>
 </Layout>
-
-<style>
-.card {
-  border: unset;
-}
-.card, .card-body {
-  height: 10rem;
-  overflow: hidden;
-}
-
-@media screen and (min-width: 768px) {
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0.5, 0.5);
-    transition: transform 0.3s ease-in-out;
-  }
-}
-</style>

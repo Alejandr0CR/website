@@ -1,56 +1,56 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
-import LatestPostGrid from '../components/LatestPostGrid.astro';
-import NavBarTop from '../components/NavBarTop.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import LatestPostGrid from "../components/LatestPostGrid.astro";
+import NavBarTop from "../components/NavBarTop.astro";
 ---
-<Layout theme="dark" title="Inicio | Alejandro Carrasco Rodríguez">
 
+<Layout theme="dark" title="Inicio | Alejandro Carrasco Rodríguez">
 	<NavBarTop theme="dark" active="index" />
 
-	<header class="container px-3 px-lg-5">
+	<div class="pt-3">
+		<header class="px-3 px-lg-5 container">
+			<section class="no-selectable bg-black mb-5 rounded-4 text-light">
+				<div class="py-5">
+					<h1 class="d-block text-center animate-name">
+						Alejandro Carrasco Rodríguez
+					</h1>
+					<span class="d-block text-center h4">Ingeniero de la web</span>
+				</div>
+			</section>
+		</header>
 
-		<section class="no-selectable bg-black text-light rounded-4 mb-5">
-			<div class="py-5">
-				<h1 class="d-block text-center animate-name">Alejandro Carrasco Rodríguez</h1>
-				<span class="d-block text-center h4">Ingeniero de la web</span>
-			</div>
-		</section>
-
-	</header>
-
-	<main class="container">
-		<LatestPostGrid />
-	</main>
+		<main class="container">
+			<LatestPostGrid />
+		</main>
+	</div>
 
 	<Footer />
-
 </Layout>
 
 <style>
-.animate-name {
-  background-image: linear-gradient(
-		-225deg,
-		#C5FFF8 0%,
-		#96EFFF 29%,
-		#5FBDFF 67%,
-		#7B66FF 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 2s linear infinite;
-}
+	.animate-name {
+		background-image: linear-gradient(
+			-225deg,
+			#c5fff8 0%,
+			#96efff 29%,
+			#5fbdff 67%,
+			#7b66ff 100%
+		);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 2s linear infinite;
+	}
 
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
-}
+	@keyframes textclip {
+		to {
+			background-position: 200% center;
+		}
+	}
 </style>

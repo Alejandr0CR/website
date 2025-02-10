@@ -47,3 +47,13 @@ li {
 .text-justify {
   text-align: justify !important;
 }
+
+.reader {
+  width: 90%;
+}
+
+@media (width >= 48rem) {
+  .reader {
+    width: 680px;
+  }
+}
