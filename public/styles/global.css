@@ -8,17 +8,21 @@ Extra large ... ≥1200px
 Extra extra large ... ≥1400px
 */
 
-html {
-  min-height: 100vh;
-  min-width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
 body {
   display: block;
   position: relative;
-  background-color: #fff;
-  min-width: 100%;
-  min-height: 100vh;
+  background: linear-gradient(to bottom right, var(--color-cyan-300), var(--color-blue-900));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: sans-serif;
+  line-height: 1.5;
 }
 
 a,
@@ -52,7 +56,7 @@ li {
   width: 90%;
 }
 
-@media (width >= 48rem) {
+@media (width >=48rem) {
   .reader {
     width: 680px;
   }
