@@ -6,8 +6,6 @@ interface Props {
 
 const { title, theme } = Astro.props;
 
-const bodyClassName = `bg-${theme}`;
-
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -40,7 +38,7 @@ const bodyClassName = `bg-${theme}`;
     <!-- title -->
 		<title>{title}</title>
 	</head>
-	<body class={bodyClassName}>
+	<body>
 		<slot />
 		<script is:inline src="/popper/popper.min.js"></script>
 		<script is:inline src="/bootstrap5/bootstrap.min.js"></script>
