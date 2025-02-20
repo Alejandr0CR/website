@@ -4,17 +4,17 @@ El desarrollo de software requiere un enfoque metodológico estructurado para ga
 
 Esta guía presenta un marco de trabajo para la creación de proyectos de software, estableciendo entregables clave y lineamientos para cada fase del ciclo de vida del desarrollo del producto.
 
-# Ser profesional no es solo cuestión de título, sino de resultados.
+# Ser profesional no es solo cuestión de título, sino de resultados
 
 Defino a una persona profesional como aquella que posee estas cuatro características:
 
-1. Resultados consistentes: No basta con tener un buen desempeño ocasional. Un profesional se distingue porque entrega valor de manera continua, sin depender de la suerte o circunstancias ideales.
+1. **Resultados consistentes**: No basta con tener un buen desempeño ocasional. Un profesional se distingue porque entrega valor de manera continua, sin depender de la suerte o circunstancias ideales.
 
-2. Calidad ajustada al propósito: No se trata de hacerlo todo perfecto, sino de generar resultados relevantes y útiles según los objetivos establecidos. La excelencia está en entender qué es lo que realmente importa.
+2. **Calidad ajustada al propósito**: Los resultados creados deben ser relevantes y útiles según los objetivos establecidos. La excelencia está en entender qué es lo que realmente importa.
 
-3. Antifragilidad: Un verdadero profesional no se derrumba ante obstáculos menores. Puede operar dentro de sus condiciones mínimas y seguir adelante, adaptándose cuando las circunstancias cambian.
+3. **Antifragilidad**: Un profesional no se derrumba ante obstáculos menores. Puede operar dentro de sus condiciones mínimas y seguir adelante, adaptándose cuando las circunstancias cambian.
 
-4. Aprendizaje continuo: La tecnología avanza a un ritmo vertiginoso. Un profesional se mantiene actualizado, aprendiendo constantemente y adaptándose a las nuevas tendencias y herramientas.
+4. **Aprendizaje continuo**: La tecnología avanza a un ritmo vertiginoso. Un profesional se mantiene actualizado, aprendiendo constantemente y adaptándose a las nuevas tendencias y herramientas.
 
 # Ciclo de vida del desarrollo de software
 
@@ -187,6 +187,23 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
 
 - **Ejemplo**: La base de datos de un sistema de biblioteca incluiría tablas como "Usuarios", "Libros", "Préstamos" y "Devoluciones".
 
+### Backup y Recuperación
+
+- Define una estrategia de copias de seguiridad para la base de datos. Ten en cuenta la frecuencia de las copias, el almacenamiento de las mismas y qué datos se respaldarán.
+
+- Define un plan de recuperación en caso de fallos.
+
+### Logging
+
+- Determina qué tecnologías usarás para registrar eventos del sistema (logs). Esto te permitirá realizar auditorías y seguimiento de errores.
+
+- Comúnmente existen logs de tipo:
+    - **Debug**: Mensaje de seguimiento para depuración.
+    - **Info**: Mensaje informativo.
+    - **Warning**: Mensaje de advertencia.
+    - **Error**: Mensaje de error controlable.
+    - **Critical**: Mensaje de error que detiene la ejecución del sistema.
+
 ## Diseño de interfaces de programación de aplicaciones (API)
 
 - Define los endpoints (URL) de la API y su funcionalidad según los lineamientos REST.
@@ -285,4 +302,10 @@ Durante esta fase, instala el sistema en el ambiente de producción y realiza pr
 
 La fase de mantenimiento es la etapa en la que se le brinda soporte al sistema, acompañando a los usuarios en el uso del sistema y corrigiendo errores que puedan surgir.
 
-- Elabora un manual de usuario que describa las funcionalidades del sistema y cómo utilizarlas. Publica el manual en el espacio del proyecto en Gooogle Drive para que los usuarios puedan consultarlo en cualquier momento.
+## Manuales
+
+- Elabora los manuales de usuario que describan las funcionalidades del sistema y cómo utilizarlas. Publica los manuales en el espacio del proyecto en Gooogle Drive para que los stakeholders puedan consultarlo en cualquier momento.
+
+## Plan de Actualización
+
+- Ten en cuenta que el software es un producto que evoluciona y depende de su entorno para seguir creciendo. Si es un sistema que se seguirá desarrollando, define un plan de acción anual para actualizar librerías, frameworks y dependencias del sistema de forma controlada y segura.
