@@ -61,7 +61,9 @@ Durante esta fase, comprende los procesos involucrados en el problema que deseas
 
 - Crea un modelo del dominio usando un mapa mental para representar las entidades y sus interacciones. Este modelo servirá como base para el diseño del sistema.
 
-- **Ejemplo**: En un sistema de gestión bibliotecaria, un diagrama de mapa mental incluiría las entidades "Libro", "Usuario", "Préstamo" y "Devolución", conectadas con líneas que representen sus relaciones y dependencias.
+- Las entidades del dominio se agrupan en módulos que representan áreas específicas del sistema. Cada módulo agrupa entidades que se relacionan para cumplir un propósito en común y define las reglas de negocio que rigen su interacción.
+
+- **Ejemplo**: En un sistema de gestión bibliotecaria, un diagrama de mapa mental incluiría las entidades "Libro", "Usuario", "Préstamo" y "Devolución", conectadas con líneas que representen sus relaciones y dependencias. Los módulos serían "Inventario", "Usuarios" y "Préstamos".
 
 ## Reglas de Negocio
 
@@ -110,6 +112,10 @@ Durante esta fase se identifica y traduce las necesidades en requerimientos para
 
 - Utiliza el formato de Historias de usuario para describir los requerimientos desde la perspectiva del usuario final. Esto facilita la comprensión y validación de los requerimientos.
 
+## Especificación de Casos de Uso
+
+- Crea un diagrama de casos de uso por cada combinación de interacciones entre un actor (usuario) y un módulo definido en el mapa mental del dominio.
+
 # Planeación del proyecto
 
 La fase de planeación proyecta el trabajo a realizar, estableciendo el plan de trabajo y el cronograma de actividades.
@@ -118,9 +124,15 @@ Durante esta fase, establece los recursos necesarios, define los roles, asigna r
 
 ## Diagrama de Gantt
 
-- Crea un diagrama de Gantt que contemple el plazo de entrega del proyecto y los periodos de presentación de avances.
+- Crea un diagrama de Gantt en Google Sheets que contemple el plazo de entrega del proyecto y los periodos de presentación de avances.
 
-- Prioriza los requerimientos utilizando la metodología MoSCoW y asigna cada requerimiento al periodo de desarrollo correspondiente en el diagrama de Gantt.
+- Prioriza los requerimientos utilizando la metodología MoSCoW y asigna cada requerimiento al periodo de desarrollo correspondiente en el diagrama de Gantt. Ten en cuenta que alguans tareas pueden ser dependientes de otras y que el retraso en una puede afectar el desarrollo de otras.
+
+- Estima tiempos con la técnica de evaluación y revisión de programas (PERT).
+
+- Usa Google Calendar para programar reuniones y actividades del proyecto. Comparte el calendario con los miembros del equipo y los stakeholders para mantenerlos informados sobre los eventos y plazos importantes.
+
+- Usa Google Tasks para asignar tareas a los miembros del equipo y hacer seguimiento de su progreso. Establece fechas límite y prioridades para cada tarea y mantén actualizado el estado de avance.
 
 # Diseño del sistema
 
@@ -128,11 +140,115 @@ La fase de diseño del sistema establece la arquitectura y estructura del sistem
 
 Durante esta fase, determina los detalles técnicos del sistema para su posterior implementación.
 
+## Stack Tecnológico
+
+- Define junto al equipo el stack tecnológico que usarán para la implementación del sistema.
+
+- No sólo los lenguajes de programación y frameworks hacen parte del stack tecnológico. También considera entre otros:
+- Proveedor de dominio
+- Hosting y sistema operativo
+- Servidor web
+- Bases de datos
+- librerías y plugins
+- Repositorio de código
+- Herramienta de control de versiones
+
+## Arquitectura de hardware
+
+- Representa la infraestructura física del sistema con un diagrama de despliegue.
+
+- **Ejemplo**: Un diagrama de despliegue mostraría el servidor de base de datos, el servidor de aplicación y los clientes conectados al sistema de biblioteca.
+
+## Arquitectura de software
+
+- Representa la arquitectura de software del sistema con un diagrama de componentes, identificando los módulos y sus interacciones.
+
+- **Ejemplo**: En un sistema de biblioteca, el módulo de "Gestión de Usuarios" se comunica con "Préstamos" para validar si un usuario tiene sanciones antes de permitir un nuevo préstamo.
+
+## Diseño de Bases de Datos
+
+- Si la base de datos es relacional, crea el modelo relacional de la base de datos mediante un diagrama.
+
+- Aplica la normalización hasta la tercera forma normal para reducir redundancias y garantizar la integridad de los datos.
+
+- Si la base de datos no es relacional, puedes usar un modelo de entidad-relación para representar las entidades y sus anidaciones.
+
+- **Ejemplo**: La base de datos de un sistema de biblioteca incluiría tablas como "Usuarios", "Libros", "Préstamos" y "Devoluciones".
+
+## Diseño de interfaces de programación de aplicaciones (API)
+
+- Define los endpoints (URL) de la API y su funcionalidad según los lineamientos REST.
+
+- Implementa estrategias de autenticación y autorización para garantizar seguridad en el acceso a los recursos.
+
+- Documenta cada ruta usando Swagger y los lineamientos de Open API.
+
+**Ejemplo**: En un sistema de gestión bibliotecaria, un endpoint como `GET /libros/{id}` debe retornar los detalles del libro solicitado, incluyendo su disponibilidad y ubicación en la biblioteca.
+
+## Diseño de UI/UX
+
+- El diseño de la interfaz y la experiencia de usuario debe priorizar la usabilidad, accesibilidad y eficiencia del sistema.
+
+- Define una paleta de colores, tipografía y elementos gráficos consistentes para mantener una identidad visual coherente.
+
+- Determina los tamaños de pantalla que el sistema debe soportar. Recuerda que el diseño debe partir desde el dispositivo más pequeño soportado y después adaptarse a pantallas más grandes.
+
+- Crea prototipos llamados wireframes para definir la estructura visual de cada interfaz de usuario. Usa un diseño por columnas y bloques para organizar los elementos. Se suele usar como mínimo 4 columnas y como máximo 12.
+
+- **Ejemplo**: En un sistema de gestión bibliotecaria, la interfaz debe permitir a los usuarios buscar libros por título o autor, visualizar disponibilidad y gestionar préstamos con un diseño intuitivo y accesible.
+
+## Diseño de algoritmos
+
+- Por cada componente de software en el diagrama de componentes, crea un diagrama de clases que represente la estructura y relaciones entre las clases dentro de dicho componente.
+
+- Describe los algoritmos para cada caso de uso del sistema. Puedes utilizar diagramas de flujo, pseudocódigo o texto estructurado para representar los algoritmos.
+
+- Ten presente las librerías y tecnologías que utilizarás para implementar los algoritmos. Asegúrate de que las librerías dan solución efectiva a las necesidades y son compatibles con el stack tecnológico escogido.
+
+## Diseño de pruebas de calidad
+
+- Diseña pruebas para cada servicio de los módulos del software,  cada endpoint de las API, y cada componente de la interfaz de usuario.
+
+- Para cada prueba identifica los posibles datos de entrada y salida, y los resultados esperados.
+
 # Implementación de la solución
 
 La fase de implementación es la etapa en la que se construye el sistema.
 
 Durante esta fase, crea el código fuente que implementa el diseño previamente pactado y realiza pruebas de calidad para garantizar que el sistema cumple con los requerimientos sin errores.
+
+## Control de Versiones
+
+- Crea un repositorio Git para almacenar el código fuente del proyecto.
+
+- Crea el archivo `.gitignore` para excluir archivos innecesarios en el repositorio.
+
+- Determina la estrategia de control de versiones adecuada para el proyecto. Algunas opciones incluyen:
+  - **Git Flow**: Ideal para desarrollo estructurado con ramas específicas para funcionalidades, correcciones y versiones estables.
+  - **GitHub Flow**: Adecuado para despliegues continuos con integración frecuente a la rama principal.
+  - **GitLab Flow**: Enfocado en la integración con CI/CD y gestión avanzada de entornos.
+  - **Trunk-Based Development**: Permite desarrollo ágil con integración constante en una única rama principal.
+
+- **Ejemplo**: Durante el desarrollo, crea una rama secundaria para implementar nuevas funciones. Una vez verificado su correcto funcionamiento, integra los cambios en la rama principal para mantener la estabilidad del proyecto.
+
+## ¡Código!
+
+- Como suelo decir, el momento de programar no es el momento de pensar. Si has llegado hasta aquí, es porque ya tienes claro qué hacer y cómo hacerlo. Ahora solo transforma en código lo que definiste en las fases previas. Esta etapa debe ser un proceso mecánico y, si surge algún imprevisto, es señal de que debes volver a la fase de diseño.
+
+- Escribe docstrings en cada función y módulo para facilitar la documentación del código.
+
+- Define los parámetros generales del sistema en archivos de configuración.
+
+- Utiliza un archivo `.env` para gestionar variables de entorno del sistema. Incluye un archivo `.env.example` en el repositorio con los nombres de las variables de entorno, pero excluye el archivo `.env` agregándolo al `.gitignore` para evitar exponer información sensible.
+
+- Una vez terminada la funcionalidad, ejecuta las pruebas planificadas para asegurar que el código cumple con los requisitos. Si se detecta un error, identifica la causa, corrige el módulo afectado y repite las pruebas hasta obtener resultados satisfactorios.
+
+## Archivo README.md
+
+- Documenta el proceso de instalación y configuración del sistema en un archivo llamado `readme.md` y ubícalo en la raíz del proyecto.
+
+- Describe las dependencias y comandos necesarios para ejecutar el proyecto. (Por ejemplo, en un archivo package.json para proyectos Node.js).
+
 
 # Despliegue
 
@@ -140,6 +256,18 @@ La fase de despliegue es la etapa en la que se pone en producción el sistema. S
 
 Durante esta fase, instala el sistema en el ambiente de producción y realiza pruebas de disponibilidad para garantizar que el sistema está funcionando correctamente.
 
+- Instala el proyecto con sus dependencias de producción en el hosting. Recuerda que el entorno de producción es diferente al de desarrollo, omite las dependencias de desarrollo.
+
+- Define variables de entorno y asegúrate de que los archivos de configuración sean seguros y accesibles solo para el usuario propietario de los procesos del software dentro del sistema operativo.
+
+- Instala los paquetes y servicios adicionales para el correcto funcionamiento del sistema.
+
+- Enlaza el hosting y el dominio para que el sistema esté accesible en línea.
+
+- Realiza pruebas de disponibilidad para evidenciar que el sistema funcione correctamente en el entorno productivo.
+
 # Mantenimiento
 
 La fase de mantenimiento es la etapa en la que se le brinda soporte al sistema, acompañando a los usuarios en el uso del sistema y corrigiendo errores que puedan surgir.
+
+- Elabora un manual de usuario que describa las funcionalidades del sistema y cómo utilizarlas. Publica el manual en el espacio del proyecto en Gooogle Drive para que los usuarios puedan consultarlo en cualquier momento.
