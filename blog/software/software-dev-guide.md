@@ -55,21 +55,21 @@ Durante esta fase, comprende los procesos involucrados en el problema que deseas
 
 ## Entidades del Dominio
 
-- El dominio es el área de conocimiento en la que se centra el sistema. Es decir, el conjunto de conceptos y reglas que rigen el funcionamiento del sistema.
+- El dominio es el área de conocimiento en la que se centra el sistema. Es decir, el conjunto de conceptos, reglas e interacciones que rigen el funcionamiento del sistema.
 
 - Las entidades del dominio son los elementos o conceptos clave que interactúan dentro del sistema.
 
-- Crea un modelo del dominio usando un mapa mental para representar las entidades y sus interacciones. Este modelo servirá como base para el diseño del sistema.
+- Crea un modelo del dominio usando un *Mapa Mental* para representar las entidades y sus interacciones. Este modelo servirá como base para el diseño del sistema.
 
 - Las entidades del dominio se agrupan en módulos que representan áreas específicas del sistema. Cada módulo agrupa entidades que se relacionan para cumplir un propósito en común y define las reglas de negocio que rigen su interacción.
 
-- **Ejemplo**: En un sistema de gestión bibliotecaria, un diagrama de mapa mental incluiría las entidades "Libro", "Usuario", "Préstamo" y "Devolución", conectadas con líneas que representen sus relaciones y dependencias. Los módulos serían "Inventario", "Usuarios" y "Préstamos".
+- **Ejemplo**: En un sistema de gestión bibliotecaria, un *Mapa Mental* del dominio incluiría las entidades "Libro", "Usuario", "Préstamo" y "Devolución", conectadas con líneas que representen sus relaciones y dependencias. Los módulos serían "Inventario", "Usuarios" y "Préstamos".
 
 ## Reglas de Negocio
 
 Las reglas de negocio se organizan en tres categorías fundamentales:
 
-- **Restricciones:** Definen condiciones que deben cumplirse dentro del sistema. Son  reglas de inhabilitación para procedimientos.
+- **Restricciones:** Definen condiciones que deben cumplirse dentro del sistema. Son reglas de inhabilitación para procedimientos.
   - **Ejemplo:** Un sistema bibliotecario establece que "Un usuario no puede tomar en préstamo más de cinco libros simultáneamente".
 - **Políticas:** Son normas generales que guían la gestión y operación del sistema. Son reglas de habilitación para procedimientos.
   - **Ejemplo:** La biblioteca permite renovar un préstamo cuando el libro no tiene reservas activas por parte de otros usuarios.
@@ -110,7 +110,7 @@ Durante esta fase se identifica y traduce las necesidades en requerimientos para
 
 ## Especificación de Casos de Uso
 
-- Crea un diagrama de casos de uso por cada módulo definido en el mapa mental del dominio.
+- Crea un *Diagrama de Casos de Uso* por cada módulo definido en el *Mapa Mental* del dominio.
 
 # Planeación del proyecto
 
@@ -120,9 +120,9 @@ Durante esta fase, establece los recursos necesarios, define los roles, asigna r
 
 ## Diagrama de Gantt y Scrum
 
-- Crea un diagrama de Gantt en Google Sheets que contemple el plazo de entrega del proyecto y los periodos de presentación de avances.
+- Crea un *Diagrama de Gantt* en Google Sheets que contemple el plazo de entrega del proyecto y los periodos de presentación de avances.
 
-- Crea el *Backlog de Producto* con todos los requerimientos del sistema y ordénalos por prioridad utilizando la metodología MoSCoW. Ten en cuenta que alguans tareas pueden ser dependientes de otras y que el retraso en una puede afectar el desarrollo de otras.
+- Crea el *Backlog de Producto* con todos los requerimientos del sistema y ordénalos por prioridad utilizando la metodología MoSCoW. Ten en cuenta que algunas tareas pueden ser dependientes de otras y que el retraso en una puede afectar el desarrollo de otras.
 
 - Estima el tiempo para cada *Historia de Usuario*. Para tareas menores se recomienda usar rangos de 1h, 2h, 4h u 8h. Para tareas mayores, se recomienda usar rangos de 2, 3, 5 o 10 días.
 
@@ -169,11 +169,13 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
     - Repositorio de código
     - Herramienta de control de versiones
 
-## Arquitectura del sistema
+## Infraestructura y Arquitectura del sistema
 
-- Representa la infraestructura física del sistema y la arquitectura del software con un *Diagrama de Estructura Compuesta*.
+- Define la infraestructura y arquitectura del sistema definiendo los componentes de software en el sistema y agrupándolos según la infraestructura física en la que se ejecutarán.
 
-- **Ejemplo**: Un diagrama de estructura compuesta mostraría la relación entre los módulos del sistema, como "Gestión de Usuarios", "Préstamos" y "Devoluciones", y cómo se comunican entre sí para cumplir con los requerimientos del sistema. También mostraría la disposición física del sistema, por ejemplo de los servidores.
+- Agrega servicios instalados en el servidor, como bases de datos, servidores de aplicaciones, servidores de correo, etc.
+
+- **Ejemplo**: Para un sistema de gestión bibliotecaria, la arquitectura podría incluir componentes como "Gestión de Usuarios", "Inventario de Libros", "Préstamos" y "Devoluciones", cada uno con sus propias funciones y responsabilidades. Y se agruparían en el servidor que aloja la aplicación.
 
 ## Diseño de Bases de Datos
 
@@ -213,7 +215,7 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
 
 ## Diseño de algoritmos
 
-- Por cada componente de software en el *Diagrama de Estructura Compuesta*, crea un diagrama de clases que represente la estructura y relaciones entre las clases dentro de dicho componente.
+- Por cada componente de software en el *Diagrama de Estructura Compuesta*, crea un *Diagrama de Clases* que represente la estructura y relaciones entre las clases dentro de dicho componente.
 
 - Describe los algoritmos para cada caso de uso del sistema. Puedes utilizar diagramas de flujo, pseudocódigo o texto estructurado para representar los algoritmos.
 
@@ -221,7 +223,7 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
 
 ## Diseño de pruebas de calidad
 
-- Diseña pruebas para cada servicio de los módulos del software,  cada endpoint de las API, y cada componente de la interfaz de usuario.
+- Diseña pruebas para cada servicio de los módulos del software, cada endpoint de las API, y cada componente de la interfaz de usuario.
 
 - Para cada prueba identifica los posibles datos de entrada y salida, y los resultados esperados.
 
