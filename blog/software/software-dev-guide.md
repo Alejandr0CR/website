@@ -35,11 +35,11 @@ Durante esta fase, comprende los procesos involucrados en el problema que deseas
 - La información del proyecto debe ser accesible para todos los miembros del equipo y los stakeholders involucrados en el proyecto. Teniendo una fuente compartida de información, se evitan malentendidos y se garantiza que todos estén al tanto de los avances y decisiones tomadas.
 
 - Crea las siguientes carpetas para almacenar la documentación del proyecto:
-- **Información**: Para almacenar documentos, presentaciones, audios, vidios y otros materiales proporcionados por las personas externas al equipo.
-- **Reuniones**: Para almacenar las actas de las reuniones y las grabaciones de las mismas.
-- **Requerimientos**: Para almacenar la documentación de los requerimientos del sistema.
-- **Diseño**: Para almacenar los diagramas y documentos de diseño del sistema.
-- **Manuales**: Para almacenar los manuales de usuario y otros documentos de soporte.
+    - **Información**: Para almacenar documentos, presentaciones, audios, vidios y otros materiales proporcionados por las personas externas al equipo.
+    - **Reuniones**: Para almacenar las actas de las reuniones y las grabaciones de las mismas.
+    - **Requerimientos**: Para almacenar la documentación de los requerimientos del sistema.
+    - **Diseño**: Para almacenar los diagramas y documentos de diseño del sistema.
+    - **Manuales**: Para almacenar los manuales de usuario y otros documentos de soporte.
 
 ## Metodologías de recolección de información
 
