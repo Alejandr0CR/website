@@ -55,7 +55,7 @@ Durante esta fase, comprende los procesos involucrados en el problema que deseas
 
 ## Entidades del Dominio
 
-- El dominio es el área de conocimiento en la que se centra el sistema. Es decir, el conjunto de conceptos, reglas e interacciones que rigen el funcionamiento del sistema.
+- El dominio es el área de conocimiento en la que se centra el sistema. Es decir, el contexto que engloba al conjunto de conceptos, reglas e interacciones que rigen el funcionamiento del sistema.
 
 - Las entidades del dominio son los elementos o conceptos clave que interactúan dentro del sistema.
 
