@@ -69,6 +69,14 @@ Las reglas de negocio se organizan en tres categorías fundamentales:
 
 - Asegúrate de que todos los miembros del equipo estén familiarizados con el glosario, ya que los términos también deben estar presentes en los conceptos y el lenguaje utilizado durante la implementación del sistema.
 
+## Contextos delimitados (Bounded Contexts)
+
+- Cuando el sistema es grande y complejo, es útil dividirlo en contextos delimitados para facilitar su comprensión y desarrollo. Cada contexto delimitado representa un área específica del sistema y se enfoca en un conjunto de conceptos y reglas de negocio relacionados.
+
+- Generalmente cuando una misma entidad tiene diferentes significados en distintos contextos, se recomienda dividir el sistema en contextos delimitados.
+
+- **Ejemplo:** En un sistema de gestión de bibliotecas, un *libro* en el contexto de inventario puede ser un objeto tangible con características físicas, mientras que en el contexto de contabilidad puede ser un activo financiero con características enfocadas al valor monetario.
+
 # Especificación de requerimientos
 
 La fase de especificación de requerimientos es la base sobre la cuál se empezará a construir la solución.
