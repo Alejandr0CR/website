@@ -118,6 +118,14 @@ La fase de planeación proyecta el trabajo a realizar, estableciendo el plan de 
 
 Durante esta fase, establece los recursos necesarios, define los roles, asigna responsabilidades, crea un plan de trabajo que guíe el curso de acción y establece un cronograma de actividades que permita cumplir con las metas y objetivos del proyecto.
 
+## Metodologías ágiles
+
+- Considera lineamientos para metodologías como Scrum o Kanban en conjunto con el plan actual.
+
+- Define la frecuencia de las iteraciones (Sprints en Scrum o ciclos en Kanban), los eventos de revisión y retrospectiva, y la forma de registrar y priorizar el trabajo.
+
+- Ajusta las reuniones de coordinación a un calendario que permita hacer seguimiento continuo, promover la retroalimentación temprana y alinear al equipo con los objetivos generales del proyecto.
+
 ## Diagrama de Gantt
 
 - Crea un diagrama de Gantt en Google Sheets que contemple el plazo de entrega del proyecto y los periodos de presentación de avances.
