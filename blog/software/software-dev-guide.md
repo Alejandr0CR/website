@@ -40,6 +40,16 @@ Durante esta fase, comprende los procesos involucrados en el problema que deseas
 
 - **NO PIENSES EN SOFTWARE AÚN**. Primero, entiende el contexto y el problema. El desarrollo de software no es sólo cuestión de código, es sobre todo empatía y comprensión de la situación para entregar la solución más adecuada.
 
+## Entidades del Dominio
+
+- El dominio es el área de conocimiento en la que se centra el sistema. Es decir, el conjunto de conceptos y reglas que rigen el funcionamiento del sistema.
+
+- Las entidades del dominio son los elementos o conceptos clave que interactúan dentro del sistema.
+
+- Crea un modelo del dominio usando un mapa mental para representar las entidades y sus interacciones. Este modelo servirá como base para el diseño del sistema.
+
+- **Ejemplo**: En un sistema de gestión bibliotecaria, un diagrama de mapa mental incluiría las entidades "Libro", "Usuario", "Préstamo" y "Devolución", conectadas con líneas que representen sus relaciones y dependencias.
+
 ## Reglas de Negocio
 
 Las reglas de negocio se organizan en tres categorías fundamentales:
@@ -58,8 +68,6 @@ Las reglas de negocio se organizan en tres categorías fundamentales:
 - Para cada término, establece **una única** definición que debe ser utilizada de manera consistente en todas las conversaciones y documentación.
 
 - Asegúrate de que todos los miembros del equipo estén familiarizados con el glosario, ya que los términos también deben estar presentes en los conceptos y el lenguaje utilizado durante la implementación del sistema.
-
-
 
 # Especificación de requerimientos
 
