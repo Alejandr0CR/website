@@ -34,21 +34,11 @@ Durante esta fase, comprende los procesos involucrados en el problema que deseas
 
 - Antes de dar el salto a la automatización mediante software, comprende los procesos actuales, identifica a los involucrados, analiza los problemas que enfrentan y determina por qué representan un obstáculo. Este mapeo de procesos, actores y problemas te proporcionará el contexto necesario para diseñar una solución efectiva.
 
-## Metodologías de recolección de información
-
 - Utiliza encuestas con preguntas tanto abiertas como cerradas para obtener información general sobre el problema y asemejarlo a soluciones que ya hayas implementado. Esto te permitirá identificar patrones que llevarán el problema a tu área de experiencia.
 
 - Realiza entrevistas semiestructuradas con usuarios clave con el propósito de profundizar en los problemas específicos que enfrentan. Toma notas y graba las conversaciones para no perder detalles importantes.
 
 - **NO PIENSES EN SOFTWARE AÚN**. Primero, entiende el contexto y el problema. El desarrollo de software no es sólo cuestión de código, es sobre todo empatía y comprensión de la situación para entregar la solución más adecuada.
-
-## Lenguaje Ubícuo
-
-- Crea un glosario compartido entre los miembros del equipo y las personas interesadas en la implementación del sistema para evitar ambigüedades.
-
-- Para cada término, establece **una única** definición que debe ser utilizada de manera consistente en todas las conversaciones y documentación.
-
-- Asegúrate de que todos los miembros del equipo estén familiarizados con el glosario, ya que los términos también deben estar presentes en los conceptos y el lenguaje utilizado durante la implementación del sistema.
 
 ## Reglas de Negocio
 
@@ -60,6 +50,16 @@ Las reglas de negocio se organizan en tres categorías fundamentales:
   - **Ejemplo:** La biblioteca permite renovar un préstamo cuando el libro no tiene reservas activas por parte de otros usuarios.
 - **Procedimientos:** Son las acciones detalladas para ejecutar una tarea específica.
   - **Ejemplo:** Para la devolución de libros, el sistema debe verificar la fecha límite, registrar la devolución y calcular posibles multas en caso de retraso.
+
+## Lenguaje Ubícuo
+
+- Crea un glosario compartido entre los miembros del equipo y las personas interesadas en la implementación del sistema para evitar ambigüedades.
+
+- Para cada término, establece **una única** definición que debe ser utilizada de manera consistente en todas las conversaciones y documentación.
+
+- Asegúrate de que todos los miembros del equipo estén familiarizados con el glosario, ya que los términos también deben estar presentes en los conceptos y el lenguaje utilizado durante la implementación del sistema.
+
+
 
 # Especificación de requerimientos
 
