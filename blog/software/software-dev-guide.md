@@ -4,7 +4,23 @@ El desarrollo de software requiere un enfoque metodológico estructurado para ga
 
 Esta guía presenta un marco de trabajo para la creación de proyectos de software, estableciendo entregables clave y lineamientos para cada fase del ciclo de vida del desarrollo del producto.
 
-# ¿Eres un profesional en desarrollo de software?
+# Ser profesional no es solo cuestión de título, sino de resultados.
+
+Defino a una persona profesional como aquella que posee estas cuatro características:
+
+1. Resultados consistentes: No basta con tener un buen desempeño ocasional. Un profesional se distingue porque entrega valor de manera continua, sin depender de la suerte o circunstancias ideales.
+
+2. Calidad ajustada al propósito: No se trata de hacerlo todo perfecto, sino de generar resultados relevantes y útiles según los objetivos establecidos. La excelencia está en entender qué es lo que realmente importa.
+
+3. Antifragilidad: Un verdadero profesional no se derrumba ante obstáculos menores. Puede operar dentro de sus condiciones mínimas y seguir adelante, adaptándose cuando las circunstancias cambian.
+
+4. Aprendizaje continuo: La tecnología avanza a un ritmo vertiginoso. Un profesional se mantiene actualizado, aprendiendo constantemente y adaptándose a las nuevas tendencias y herramientas.
+
+# Ciclo de vida del desarrollo de software
+
+El desarrollo de software no es solo una cuestión de código, sino de visión, estrategia y evolución. Para garantizar el éxito de un proyecto de software, es necesario seguir un plan de trabajo que guíe el proceso de creación del producto.
+
+A continuación se detallan las fases del ciclo de vida del desarrollo de software y los entregables clave de cada una de ellas.
 
 # Análisis del problema
 
