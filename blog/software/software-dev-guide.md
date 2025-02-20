@@ -145,13 +145,13 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
 - Define junto al equipo el stack tecnológico que usarán para la implementación del sistema.
 
 - No sólo los lenguajes de programación y frameworks hacen parte del stack tecnológico. También considera entre otros:
-- Proveedor de dominio
-- Hosting y sistema operativo
-- Servidor web
-- Bases de datos
-- librerías y plugins
-- Repositorio de código
-- Herramienta de control de versiones
+    - Proveedor de dominio
+    - Hosting y sistema operativo
+    - Servidor web
+    - Bases de datos
+    - librerías y plugins
+    - Repositorio de código
+    - Herramienta de control de versiones
 
 ## Arquitectura de hardware
 
@@ -224,10 +224,10 @@ Durante esta fase, crea el código fuente que implementa el diseño previamente 
 - Crea el archivo `.gitignore` para excluir archivos innecesarios en el repositorio.
 
 - Determina la estrategia de control de versiones adecuada para el proyecto. Algunas opciones incluyen:
-  - **Git Flow**: Ideal para desarrollo estructurado con ramas específicas para funcionalidades, correcciones y versiones estables.
-  - **GitHub Flow**: Adecuado para despliegues continuos con integración frecuente a la rama principal.
-  - **GitLab Flow**: Enfocado en la integración con CI/CD y gestión avanzada de entornos.
-  - **Trunk-Based Development**: Permite desarrollo ágil con integración constante en una única rama principal.
+    - **Git Flow**: Ideal para desarrollo estructurado con ramas específicas para funcionalidades, correcciones y versiones estables.
+    - **GitHub Flow**: Adecuado para despliegues continuos con integración frecuente a la rama principal.
+    - **GitLab Flow**: Enfocado en la integración con CI/CD y gestión avanzada de entornos.
+    - **Trunk-Based Development**: Permite desarrollo ágil con integración constante en una única rama principal.
 
 - **Ejemplo**: Durante el desarrollo, crea una rama secundaria para implementar nuevas funciones. Una vez verificado su correcto funcionamiento, integra los cambios en la rama principal para mantener la estabilidad del proyecto.
 
@@ -248,7 +248,6 @@ Durante esta fase, crea el código fuente que implementa el diseño previamente 
 - Documenta el proceso de instalación y configuración del sistema en un archivo llamado `readme.md` y ubícalo en la raíz del proyecto.
 
 - Describe las dependencias y comandos necesarios para ejecutar el proyecto. (Por ejemplo, en un archivo package.json para proyectos Node.js).
-
 
 # Despliegue
 
