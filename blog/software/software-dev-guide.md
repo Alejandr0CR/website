@@ -191,6 +191,10 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
 
 - **Ejemplo**: En un sistema de gestión bibliotecaria, la interfaz debe permitir a los usuarios buscar libros por título o autor, visualizar disponibilidad y gestionar préstamos con un diseño intuitivo y accesible.
 
+### Máquinas de Estados
+
+- Crea un *Diagrama de Estados* para cada componente de la interfaz de usuario que contenga un estado interno. Este diagrama muestra los diferentes estados que puede tener un componente y las transiciones entre ellos.
+
 ## Diseño de algoritmos
 
 - Por cada componente de software en el diagrama de componentes, crea un diagrama de clases que represente la estructura y relaciones entre las clases dentro de dicho componente.
