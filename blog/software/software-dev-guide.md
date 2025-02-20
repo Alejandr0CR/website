@@ -138,6 +138,10 @@ Durante esta fase, establece los recursos necesarios, define los roles, asigna r
 
 - Usa Google Tasks para asignar tareas a los miembros del equipo y hacer seguimiento de su progreso. Establece fechas límite y prioridades para cada tarea y mantén actualizado el estado de avance.
 
+## Riesgos y contingencias
+
+- Los proyectos de software pueden enfrentar riesgos que afecten su desarrollo y entrega. Los cambios de alcance, problemas técnicos y calamidades son algunos de los riesgos comunes a tener en cuenta.
+
 # Diseño del sistema
 
 La fase de diseño del sistema establece la arquitectura y estructura del sistema.
