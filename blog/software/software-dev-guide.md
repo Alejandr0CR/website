@@ -36,7 +36,7 @@ Durante esta fase, comprende los procesos involucrados en el problema que deseas
 
 - Crea las siguientes carpetas para almacenar la documentación del proyecto:
     - **Información**: Para almacenar documentos, presentaciones, audios, vidios y otros materiales proporcionados por las personas externas al equipo.
-    - **Reuniones**: Para almacenar las actas de las reuniones y las grabaciones de las mismas.
+    - **Reuniones**: Para almacenar las grabaciones de las reuniones.
     - **Requerimientos**: Para almacenar la documentación de los requerimientos del sistema.
     - **Diseño**: Para almacenar los diagramas y documentos de diseño del sistema.
     - **Manuales**: Para almacenar los manuales de usuario y otros documentos de soporte.
