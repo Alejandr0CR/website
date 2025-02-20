@@ -28,6 +28,19 @@ La fase de análisis es el punto de partida para todo proyecto de desarrollo de 
 
 Durante esta fase, comprende los procesos involucrados en el problema que deseas resolver, entiende cuál es el problema, entiende por qué es un problema y a quiénes afecta.
 
+## Información compartida
+
+- Crea un espacio compartido en Google Drive para almacenar y compartir la documentación del proyecto.
+
+- La información del proyecto debe ser accesible para todos los miembros del equipo y los stakeholders involucrados en el proyecto. Teniendo una fuente compartida de información, se evitan malentendidos y se garantiza que todos estén al tanto de los avances y decisiones tomadas.
+
+- Crea las siguientes carpetas para almacenar la documentación del proyecto:
+- **Información**: Para almacenar documentos, presentaciones, audios, vidios y otros materiales proporcionados por las personas externas al equipo.
+- **Reuniones**: Para almacenar las actas de las reuniones y las grabaciones de las mismas.
+- **Requerimientos**: Para almacenar la documentación de los requerimientos del sistema.
+- **Diseño**: Para almacenar los diagramas y documentos de diseño del sistema.
+- **Manuales**: Para almacenar los manuales de usuario y otros documentos de soporte.
+
 ## Metodologías de recolección de información
 
 - El primer paso para resolver un problema es entender el contexto en el que se encuentra. Utiliza encuestas y entrevistas para recolectar información de los involucrados.
@@ -69,6 +82,10 @@ Las reglas de negocio se organizan en tres categorías fundamentales:
 
 - Asegúrate de que todos los miembros del equipo estén familiarizados con el glosario, ya que los términos también deben estar presentes en los conceptos y el lenguaje utilizado durante la implementación del sistema.
 
+### Stakeholders
+
+- Los stakeholders son todas las personas o grupos que están interesados o involucrados de manera directa en el desarrollo del sistema. Pueden ser clientes, usuarios finales, administradores, desarrolladores, patrocinadores, etc.
+
 ## Contextos delimitados (Bounded Contexts)
 
 - Cuando el sistema es grande y complejo, es útil dividirlo en contextos delimitados para facilitar su comprensión y desarrollo. Cada contexto delimitado representa un área específica del sistema y se enfoca en un conjunto de conceptos y reglas de negocio relacionados.
@@ -83,11 +100,27 @@ La fase de especificación de requerimientos es la base sobre la cuál se empeza
 
 Durante esta fase se identifica y traduce las necesidades en requerimientos para el sistema.
 
+## IEEE 830
+
+- La IEEE 830 es una guía para la especificación de requerimientos de software. Proporciona un marco de trabajo para la documentación de los requerimientos de un sistema.
+
+- Utiliza el formato IEEE 830 para definir el alcance y las restricciones del proyecto.
+
+- Valida cada requerimiento con los stakeholders antes de la implementación. Nunca asumas que una funcionalidad o característica del sistema es obvia o innecesaria, o que todos entienden el requerimiento de la misma manera. Siempre es mejor confirmar antes de avanzar.
+
+- Utiliza el formato de Historias de usuario para describir los requerimientos desde la perspectiva del usuario final. Esto facilita la comprensión y validación de los requerimientos.
+
 # Planeación del proyecto
 
 La fase de planeación proyecta el trabajo a realizar, estableciendo el plan de trabajo y el cronograma de actividades.
 
 Durante esta fase, establece los recursos necesarios, define los roles, asigna responsabilidades, crea un plan de trabajo que guíe el curso de acción y establece un cronograma de actividades que permita cumplir con las metas y objetivos del proyecto.
+
+## Diagrama de Gantt
+
+- Crea un diagrama de Gantt que contemple el plazo de entrega del proyecto y los periodos de presentación de avances.
+
+- Prioriza los requerimientos utilizando la metodología MoSCoW y asigna cada requerimiento al periodo de desarrollo correspondiente en el diagrama de Gantt.
 
 # Diseño del sistema
 
