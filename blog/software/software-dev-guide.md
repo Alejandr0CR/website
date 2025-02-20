@@ -153,17 +153,11 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
     - Repositorio de código
     - Herramienta de control de versiones
 
-## Arquitectura de hardware
+## Arquitectura del sistema
 
-- Representa la infraestructura física del sistema con un diagrama de despliegue.
+- Representa la infraestructura física del sistema y la arquitectura del software con un *Diagrama de Estructura Compuesta*.
 
-- **Ejemplo**: Un diagrama de despliegue mostraría el servidor de base de datos, el servidor de aplicación y los clientes conectados al sistema de biblioteca.
-
-## Arquitectura de software
-
-- Representa la arquitectura de software del sistema con un diagrama de componentes, identificando los módulos y sus interacciones.
-
-- **Ejemplo**: En un sistema de biblioteca, el módulo de "Gestión de Usuarios" se comunica con "Préstamos" para validar si un usuario tiene sanciones antes de permitir un nuevo préstamo.
+- **Ejemplo**: Un diagrama de estructura compuesta mostraría la relación entre los módulos del sistema, como "Gestión de Usuarios", "Préstamos" y "Devoluciones", y cómo se comunican entre sí para cumplir con los requerimientos del sistema. También mostraría la disposición física del sistema, por ejemplo de los servidores.
 
 ## Diseño de Bases de Datos
 
