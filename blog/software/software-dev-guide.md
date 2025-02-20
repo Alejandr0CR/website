@@ -102,15 +102,11 @@ La fase de especificación de requerimientos es la base sobre la cuál se empeza
 
 Durante esta fase se identifica y traduce las necesidades en requerimientos para el sistema.
 
-## IEEE 830
-
-- La IEEE 830 es una guía para la especificación de requerimientos de software. Proporciona un marco de trabajo para la documentación de los requerimientos de un sistema.
-
-- Utiliza el formato IEEE 830 para definir el alcance y las restricciones del proyecto.
-
-- Valida cada requerimiento con los stakeholders antes de la implementación. Nunca asumas que una funcionalidad o característica del sistema es obvia o innecesaria, o que todos entienden el requerimiento de la misma manera. Siempre es mejor confirmar antes de avanzar.
+## Historias de Usuario
 
 - Utiliza el formato de Historias de usuario para describir los requerimientos desde la perspectiva del usuario final. Esto facilita la comprensión y validación de los requerimientos.
+
+- Valida cada requerimiento con los stakeholders al realizar las reuniones antes de la implementación. Nunca asumas que una funcionalidad o característica del sistema es obvia o innecesaria, o que todos entienden el requerimiento de la misma manera. Siempre es mejor confirmar antes de avanzar.
 
 ## Especificación de Casos de Uso
 
