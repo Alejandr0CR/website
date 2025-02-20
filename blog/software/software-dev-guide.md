@@ -205,7 +205,7 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
 
 ## Diseño de algoritmos
 
-- Por cada componente de software en el diagrama de componentes, crea un diagrama de clases que represente la estructura y relaciones entre las clases dentro de dicho componente.
+- Por cada componente de software en el *Diagrama de Estructura Compuesta*, crea un diagrama de clases que represente la estructura y relaciones entre las clases dentro de dicho componente.
 
 - Describe los algoritmos para cada caso de uso del sistema. Puedes utilizar diagramas de flujo, pseudocódigo o texto estructurado para representar los algoritmos.
 
