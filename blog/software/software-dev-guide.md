@@ -175,7 +175,7 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
 
 - Agrega servicios instalados en el servidor, como bases de datos, servidores de aplicaciones, servidores de correo, etc.
 
-- **Ejemplo**: Para un sistema de gestión bibliotecaria, la arquitectura podría incluir componentes como "Gestión de Usuarios", "Inventario de Libros", "Préstamos" y "Devoluciones", cada uno con sus propias funciones y responsabilidades. Y se agruparían en el servidor que aloja la aplicación.
+- **Ejemplo**: Para un sistema de gestión bibliotecaria, la arquitectura de software podría incluir componentes como "Gestión de Usuarios", "Inventario de Libros", "Préstamos" y "Devoluciones". Y se agruparían físicamente en el servidor que aloja la aplicación.
 
 ## Diseño de Bases de Datos
 
