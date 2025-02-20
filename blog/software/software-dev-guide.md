@@ -50,6 +50,17 @@ Durante esta fase, comprende los procesos involucrados en el problema que deseas
 
 - Asegúrate de que todos los miembros del equipo estén familiarizados con el glosario, ya que los términos también deben estar presentes en los conceptos y el lenguaje utilizado durante la implementación del sistema.
 
+## Reglas de Negocio
+
+Las reglas de negocio se organizan en tres categorías fundamentales:
+
+- **Restricciones:** Definen condiciones que deben cumplirse dentro del sistema. Son  reglas de inhabilitación para procedimientos.
+  - **Ejemplo:** Un sistema bibliotecario establece que "Un usuario no puede tomar en préstamo más de cinco libros simultáneamente".
+- **Políticas:** Son normas generales que guían la gestión y operación del sistema. Son reglas de habilitación para procedimientos.
+  - **Ejemplo:** La biblioteca permite renovar un préstamo cuando el libro no tiene reservas activas por parte de otros usuarios.
+- **Procedimientos:** Son las acciones detalladas para ejecutar una tarea específica.
+  - **Ejemplo:** Para la devolución de libros, el sistema debe verificar la fecha límite, registrar la devolución y calcular posibles multas en caso de retraso.
+
 # Especificación de requerimientos
 
 La fase de especificación de requerimientos es la base sobre la cuál se empezará a construir la solución.
