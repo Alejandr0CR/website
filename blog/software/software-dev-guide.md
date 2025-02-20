@@ -102,15 +102,15 @@ La fase de especificación de requerimientos es la base sobre la cuál se empeza
 
 Durante esta fase se identifica y traduce las necesidades en requerimientos para el sistema.
 
-## Historias de Usuario
+## Historias de usuario
 
-- Utiliza el formato de Historias de usuario para describir los requerimientos desde la perspectiva del usuario final. Esto facilita la comprensión y validación de los requerimientos.
+- Utiliza el formato de *Historias de Usuario* para describir los requerimientos desde la perspectiva del usuario final. Esto facilita la comprensión y validación de los requerimientos.
 
 - Valida cada requerimiento con los stakeholders al realizar las reuniones antes de la implementación. Nunca asumas que una funcionalidad o característica del sistema es obvia o innecesaria, o que todos entienden el requerimiento de la misma manera. Siempre es mejor confirmar antes de avanzar.
 
 ## Especificación de Casos de Uso
 
-- Crea un diagrama de casos de uso por cada combinación de interacciones entre un actor (usuario) y un módulo definido en el mapa mental del dominio.
+- Crea un diagrama de casos de uso por cada módulo definido en el mapa mental del dominio.
 
 # Planeación del proyecto
 
@@ -118,23 +118,31 @@ La fase de planeación proyecta el trabajo a realizar, estableciendo el plan de 
 
 Durante esta fase, establece los recursos necesarios, define los roles, asigna responsabilidades, crea un plan de trabajo que guíe el curso de acción y establece un cronograma de actividades que permita cumplir con las metas y objetivos del proyecto.
 
-## Metodologías ágiles
-
-- Considera lineamientos para metodologías como Scrum o Kanban en conjunto con el plan actual.
-
-- Define la frecuencia de las iteraciones (Sprints en Scrum o ciclos en Kanban), los eventos de revisión y retrospectiva, y la forma de registrar y priorizar el trabajo.
-
-- Ajusta las reuniones de coordinación a un calendario que permita hacer seguimiento continuo, promover la retroalimentación temprana y alinear al equipo con los objetivos generales del proyecto.
-
-## Diagrama de Gantt
+## Diagrama de Gantt y Scrum
 
 - Crea un diagrama de Gantt en Google Sheets que contemple el plazo de entrega del proyecto y los periodos de presentación de avances.
 
-- Prioriza los requerimientos utilizando la metodología MoSCoW y asigna cada requerimiento al periodo de desarrollo correspondiente en el diagrama de Gantt. Ten en cuenta que alguans tareas pueden ser dependientes de otras y que el retraso en una puede afectar el desarrollo de otras.
+- Crea el *Backlog de Producto* con todos los requerimientos del sistema y ordénalos por prioridad utilizando la metodología MoSCoW. Ten en cuenta que alguans tareas pueden ser dependientes de otras y que el retraso en una puede afectar el desarrollo de otras.
 
-- Estima tiempos con la técnica de evaluación y revisión de programas (PERT).
+- Estima el tiempo para cada *Historia de Usuario*. Para tareas menores se recomienda usar rangos de 1h, 2h, 4h u 8h. Para tareas mayores, se recomienda usar rangos de 2, 3, 5 o 10 días.
 
-- Usa Google Calendar para programar reuniones y actividades del proyecto. Comparte el calendario con los miembros del equipo y los stakeholders para mantenerlos informados sobre los eventos y plazos importantes.
+- Elabora el Backlog de Liberación para la próxima entrega, detallando el número de iteraciones (sprints), la duración de cada iteración (de 1 a 4 semanas), el objetivo específico de cada iteración y las *Historias de Usuario* que se implementarán en cada una.
+
+- Registra diariamente las horas de trabajo restantes basándote en el tiempo estimado para cada *Historia de Usuario*. Esto te permitirá controlar el progreso y ajustar el plan de trabajo según sea necesario.
+
+- Dedica entre 5 y 15 minutos diarios para evaluar tu progreso.
+    - ¿Qué completaste desde tu último recuento?
+    - ¿Qué planeas lograr antes de tu siguiente recuento?
+    - ¿Qué Obstáculos han surgido?
+
+- Al finalizar cada iteración (sprint), realiza una revisión:
+    - ¿Qué funcionó bien y debe repetirse?
+    - ¿Qué no funcionó y debe ajustarse?
+    - ¿Qué cambios realizarás para mejorar en la siguiente iteración?
+
+## Fechas y tareas
+
+- Usa Google Calendar para programar reuniones y eventos del proyecto. Comparte el calendario con los miembros del equipo y los stakeholders para mantenerlos informados sobre los eventos y plazos importantes.
 
 - Usa Google Tasks para asignar tareas a los miembros del equipo y hacer seguimiento de su progreso. Establece fechas límite y prioridades para cada tarea y mantén actualizado el estado de avance.
 
