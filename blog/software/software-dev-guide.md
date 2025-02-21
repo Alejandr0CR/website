@@ -84,7 +84,7 @@ Las reglas de negocio se organizan en tres categorías fundamentales:
 
 - Asegúrate de que todos los miembros del equipo estén familiarizados con el glosario, ya que los términos también deben estar presentes en los conceptos y el lenguaje utilizado durante la implementación del sistema.
 
-### Stakeholders
+## Stakeholders
 
 - Los stakeholders son todas las personas o grupos que están interesados o involucrados de manera directa en el desarrollo del sistema. Pueden ser clientes, usuarios finales, administradores, desarrolladores, patrocinadores, etc.
 
@@ -187,13 +187,13 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
 
 - **Ejemplo**: La base de datos de un sistema de biblioteca incluiría tablas como "Usuarios", "Libros", "Préstamos" y "Devoluciones".
 
-### Backup y Recuperación
+## Backup y Recuperación
 
 - Define una estrategia de copias de seguiridad para la base de datos. Ten en cuenta la frecuencia de las copias, el almacenamiento de las mismas y qué datos se respaldarán.
 
 - Define un plan de recuperación en caso de fallos.
 
-### Logging
+## Logging
 
 - Determina qué tecnologías usarás para registrar eventos del sistema (logs). Esto te permitirá realizar auditorías y seguimiento de errores.
 
@@ -226,7 +226,7 @@ Durante esta fase, determina los detalles técnicos del sistema para su posterio
 
 - **Ejemplo**: En un sistema de gestión bibliotecaria, la interfaz debe permitir a los usuarios buscar libros por título o autor, visualizar disponibilidad y gestionar préstamos con un diseño intuitivo y accesible.
 
-### Máquinas de Estados
+## Máquinas de Estados
 
 - Crea un *Diagrama de Estados* para cada componente de la interfaz de usuario que contenga un estado interno. Este diagrama muestra los diferentes estados que puede tener un componente y las transiciones entre ellos.
 
@@ -304,7 +304,7 @@ La fase de mantenimiento es la etapa en la que se le brinda soporte al sistema, 
 
 ## Manuales
 
-- Elabora los manuales de usuario que describan las funcionalidades del sistema y cómo utilizarlas. Publica los manuales en el espacio del proyecto en Gooogle Drive para que los stakeholders puedan consultarlo en cualquier momento.
+- Elabora los manuales de usuario que describan las funcionalidades del sistema y cómo utilizarlas. Publica los manuales en el espacio del proyecto en Google Drive para que los stakeholders puedan consultarlo en cualquier momento.
 
 ## Plan de Actualización
 
