@@ -7,8 +7,8 @@ Las habilidades son las actividades que una persona podría realizar de manera e
 **Las habilidades y competencias se definen con el siguiente esquema:**
 
 - Verbo (esencia)
-- Complemento (forma) (intrínseco)
-    - Medio (usando técnica, herramienta, etc.)
+- Complemento (esencia) (intrínseco)
+- Medio (forma) (usando técnica, herramienta, etc.)
 - Sujeto poseedor (forma) (extrínseco)
     - Condiciones del sujeto poseedor (circunferencias y cualidades)
 
